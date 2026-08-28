@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sacred Truth - Centered Presentation</title>
+   
+    <!-- FontAwesome & Google Fonts -->
+    <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* ==================== GLOBAL SETUP ==================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+
+        body {
+            /* Ambient Dark Studio Background with Center Light Glow */
+            background:
+                radial-gradient(circle at 50% 50%, rgba(85, 107, 47, 0.85) 0%, rgba(20, 30, 15, 0.95) 50%, rgba(8, 12, 5, 1) 100%),
+                repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px);
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+
+        .app-viewport {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+
+
+        /* ==================== TOP NAVIGATION BAR ==================== */
+        .top-nav {
+            background: rgba(10, 15, 8, 0.7);
+            backdrop-filter: blur(12px);
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 195, 163, 0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            flex-wrap: wrap;
+        }
+
+
+        .nav-pill {
+            background: rgba(241, 228, 207, 0.9);
+            color: #2b1f14;
+            border: 1px solid #c9b38c;
+            padding: 7px 20px;
+            border-radius: 25px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+
+        .nav-pill:hover {
+            background: #ffffff;
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+
+        .nav-pill.active {
+            background: linear-gradient(135deg, #8c6d46 0%, #5a4225 100%);
+            color: #ffffff;
+            border-color: #d4c3a3;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+
+        /* ==================== STAGE & CENTERED VIEWPORT ==================== */
+        .main-stage {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 2200px;
+            overflow: hidden;
+        }
+
+
+        /* Decorative Side Lace Trim Overlay */
+        .lace-border {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            z-index: 10;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='120' viewBox='0 0 80 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 C22 15 0 10 0 30 C0 50 22 45 40 60 C58 45 80 50 80 30 C80 10 58 15 40 0 Z' fill='%23f3ebd9' fill-opacity='0.2' stroke='%23d4c5a9' stroke-width='1.5'/%3E%3Ccircle cx='40' cy='30' r='8' fill='%23e2d5bc' fill-opacity='0.3'/%3E%3C/svg%3E");
+            background-repeat: repeat-y;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.6));
+        }
+        .lace-left { left: 0; }
+        .lace-right { right: 0; transform: scaleX(-1); }
+
+
+        /* ==================== SELF-ADJUSTING DYNAMIC BOOK ==================== */
+        .book {
+            position: relative;
+            width: 440px;
+            height: 620px;
+            filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.8));
+            /* Matches paper rotation speed to smoothly re-center spine */
+            transition: transform 1.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+
+        .paper {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transform-origin: left center;
+            transition: transform 1.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform-style: preserve-3d;
+            border-radius: 6px;
+        }
+
+
+        /* Flipped Paper State */
+        .paper.flipped {
+            transform: rotateY(-180deg);
+        }
+
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+        }
+
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+
+        /* Natural Shadow Overlay on Paper Curve */
+        .paper::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0.15) 100%);
+            pointer-events: none;
+            border-radius: 6px;
+            backface-visibility: hidden;
+        }
+
+
+        /* ==================== PAGE DESIGNS ==================== */
+        .front-content, .back-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+
+        /* Leather Cover Style */
+        .cover-style {
+            background:
+                radial-gradient(circle at 40% 30%, #8d4a1d 0%, #4a220a 70%, #240d02 100%),
+                repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 4px);
+            border-left: 14px solid #140701;
+            padding: 35px;
+            color: #e6c687;
+            text-align: center;
+        }
+
+
+        .gold-frame {
+            border: 2px solid #c9a45c;
+            outline: 1px solid #c9a45c;
+            outline-offset: 6px;
+            height: 100%;
+            width: 100%;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.15);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+        }
+
+
+        .cover-title {
+            font-family: 'Alex Brush', cursive;
+            font-size: 4.5rem;
+            color: #f7e7c4;
+            text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.9), 0 0 12px rgba(201, 164, 92, 0.4);
+            line-height: 1.1;
+            margin-top: 15px;
+        }
+
+
+        .cover-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #d8b775;
+            line-height: 1.6;
+            letter-spacing: 1px;
+        }
+
+
+        .cover-group {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #f7e7c4;
+            letter-spacing: 2px;
+        }
+
+
+        /* Vintage Parchment Pages */
+        .parchment-style {
+            background-color: #f5eedb;
+            background-image:
+                radial-gradient(circle at center, transparent 50%, rgba(163, 131, 87, 0.22) 100%),
+                linear-gradient(45deg, rgba(160, 130, 90, 0.05) 25%, transparent 25%, transparent 75%, rgba(160, 130, 90, 0.05) 75%),
+                linear-gradient(-45deg, rgba(160, 130, 90, 0.05) 25%, transparent 25%, transparent 75%, rgba(160, 130, 90, 0.05) 75%);
+            background-size: 100% 100%, 30px 30px, 30px 30px;
+            box-shadow: inset 18px 0 30px rgba(0,0,0,0.18), inset -5px 0 10px rgba(0,0,0,0.05);
+            border-left: 1px solid #d1c2a5;
+            padding: 45px 35px;
+            color: #3b2819;
+        }
+
+
+        .page-header h2 {
+            font-family: 'Alex Brush', cursive;
+            font-size: 3.4rem;
+            color: #2b1a0e;
+            text-align: center;
+            font-weight: normal;
+            line-height: 1;
+        }
+
+
+        .page-body {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #3d2d20;
+            text-align: justify;
+        }
+
+
+        .watermark {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-25deg);
+            font-family: 'Alex Brush', cursive;
+            font-size: 7.5rem;
+            color: rgba(180, 150, 110, 0.12);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+
+        /* ==================== SIDE ARROWS ==================== */
+        #prev-btn, #next-btn {
+            background: rgba(241, 228, 207, 0.15);
+            border: 1px solid rgba(241, 228, 207, 0.3);
+            color: #f1e4cf;
+            font-size: 2.8rem;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+
+        #prev-btn { left: 60px; }
+        #next-btn { right: 60px; }
+
+
+        #prev-btn:hover, #next-btn:hover {
+            background: #ffffff;
+            color: #3d2b1f;
+            transform: translateY(-50%) scale(1.15);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+        }
+
+
+        #prev-btn:active, #next-btn:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+
+        /* ==================== FOOTER ==================== */
+        .site-footer {
+            background: rgba(10, 15, 8, 0.85);
+            color: #c5b293;
+            text-align: center;
+            padding: 12px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(212, 195, 163, 0.15);
+            z-index: 100;
+            letter-spacing: 1px;
+        }
+
+
+        @media (max-height: 750px) {
+            .book { transform: scale(0.8); }
+        }
+        @media (max-width: 850px) {
+            .book { transform: scale(0.72); }
+            #prev-btn { left: 15px; }
+            #next-btn { right: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="app-viewport">
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav" id="top-nav">
+        <button class="nav-pill active" onclick="goToNav(0)">Cover</button>
+        <button class="nav-pill" onclick="goToNav(1)">Introduction</button>
+        <button class="nav-pill" onclick="goToNav(2)">Table of contents</button>
+        <button class="nav-pill" onclick="goToNav(3)">Individual confessions</button>
+        <button class="nav-pill" onclick="goToNav(4)">Group Reflection</button>
+        <button class="nav-pill" onclick="goToNav(5)">Final Prayer</button>
+        <button class="nav-pill" onclick="goToNav(6)">Members face card</button>
+    </nav>
+
+
+    <!-- Main Viewport Canvas -->
+    <main class="main-stage">
+        <div class="lace-border lace-left"></div>
+
+
+        <!-- Previous Button -->
+        <button id="prev-btn" title="Previous Page">
+            <i class="fas fa-arrow-circle-left"></i>
+        </button>
+
+
+        <!-- Dynamic Self-Centering Book -->
+        <div id="book" class="book">
+           
+            <!-- PAPER 1 -->
+            <div id="p1" class="paper">
+                <div class="front">
+                    <div id="f1" class="front-content cover-style">
+                        <div class="gold-frame">
+                            <div class="cover-title">The Sacred<br>Truth</div>
+                            <div class="cover-subtitle">Theology and Computer<br>Programming<br>Collaborative project</div>
+                            <div class="cover-group">Group 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div id="b1" class="back-content parchment-style">
+                        <div class="watermark">Canva</div>
+                        <div class="page-header"><h2>Introduction</h2></div>
+                        <div class="page-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <br>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Yay ay hu ja koplete you name just for what how are you one two three six seven to the Earth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PAPER 2 -->
+            <div id="p2" class="paper">
+                <div class="front">
+                    <div id="f2" class="front-content parchment-style">
+                        <div class="watermark">Canva</div>
+                        <div class="page-header"><h2>Table of Contents</h2></div>
+                        <div class="page-body" style="line-height: 2.2;">
+                            <p><strong>I. Introduction</strong> ..................................... Page 1</p>
+                            <p><strong>II. Individual Confessions</strong> ................. Page 3</p>
+                            <p><strong>III. Group Reflection</strong> .......................... Page 4</p>
+                            <p><strong>IV. Final Prayer</strong> ................................ Page 5</p>
+                            <p><strong>V. Members Face Cards</strong> .................. Page 6</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div id="b2" class="back-content parchment-style">
+                        <div class="watermark">Canva</div>
+                        <div class="page-header"><h2>Individual Confessions</h2></div>
+                        <div class="page-body">
+                            <p><em>"Faith and logic are not opposing forces, but two sides of the same divine truth."</em></p>
+                            <br>
+                            <p>Through this project, each member explored how computational logic reflects the order and purpose designed into theology. Here we share our individual spiritual growth during this collaborative build.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PAPER 3 -->
+            <div id="p3" class="paper">
+                <div class="front">
+                    <div id="f3" class="front-content parchment-style">
+                        <div class="watermark">Canva</div>
+                        <div class="page-header"><h2>Group Reflection</h2></div>
+                        <div class="page-body">
+                            <p>Working together as Group 1 taught us that constructing software is much like building a faith community: every line of code requires care, intent, and structural integrity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div id="b3" class="back-content parchment-style">
+                        <div class="watermark">Canva</div>
+                        <div class="page-header"><h2>Final Prayer</h2></div>
+                        <div class="page-body" style="text-align: center; font-style: italic;">
+                            <p>Lord God, Creator of wisdom and source of all truth, guide our minds as we learn and build. May our work in theology and technology bring honor to Your name and service to others.</p>
+                            <br><p>Amen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PAPER 4 -->
+            <div id="p4" class="paper">
+                <div class="front">
+                    <div id="f4" class="front-content parchment-style">
+                        <div class="watermark">Canva</div>
+                        <div class="page-header"><h2>Members Face Card</h2></div>
+                        <div class="page-body" style="text-align: center;">
+                            <p><strong>Group 1 Collaborators</strong></p>
+                            <br>
+                            <ul style="list-style: none; line-height: 2.2;">
+                                <li>✦ Lead Developer / Designer ✦</li>
+                                <li>✦ Theology Research Lead ✦</li>
+                                <li>✦ Frontend Developer ✦</li>
+                                <li>✦ Quality Assurance ✦</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div id="b4" class="back-content parchment-style" style="text-align: center; justify-content: center; background: #e0d1b3;">
+                        <h2 style="font-family: 'Alex Brush', cursive; font-size: 3.5rem;">The End</h2>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- Next Button -->
+        <button id="next-btn" title="Next Page">
+            <i class="fas fa-arrow-circle-right"></i>
+        </button>
+
+
+        <div class="lace-border lace-right"></div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        Theology and Computer Programming Collaborative project — Group 1
+    </footer>
+</div>
+
+
+<script>
+    // 1. SELECT HTML ELEMENTS
+    const prevBtn = document.querySelector("#prev-btn");
+    const nextBtn = document.querySelector("#next-btn");
+    const book = document.querySelector("#book");
+    const p1 = document.querySelector("#p1");
+    const p2 = document.querySelector("#p2");
+    const p3 = document.querySelector("#p3");
+    const p4 = document.querySelector("#p4");
+
+
+    const papers = [p1, p2, p3, p4];
+    const navPills = document.querySelectorAll(".nav-pill");
+
+
+    let currentState = 0;
+    const maxState = papers.length;
+
+
+    // 2. CORE FUNCTION: Dynamic Spine Centering & 3D Flip
+    function updateBookState() {
+        // A. Smoothly shift the book spine based on state
+        if (currentState === 0) {
+            // Front cover closed: Center single right page
+            book.style.transform = "translateX(0%)";
+        } else if (currentState === maxState) {
+            // Back cover closed: Center single left page
+            book.style.transform = "translateX(100%)";
+        } else {
+            // Book open: Center spine so both pages balance equally
+            book.style.transform = "translateX(50%)";
+        }
+
+
+        // B. Handle 3D page rotation and layer order
+        papers.forEach((paper, index) => {
+            if (index < currentState) {
+                paper.classList.add("flipped");
+                paper.style.zIndex = index + 1;
+            } else {
+                paper.classList.remove("flipped");
+                paper.style.zIndex = maxState - index;
+            }
+        });
+
+
+        updateActiveNavPill();
+    }
+
+
+    // 3. PAGE CHANGE NAVIGATION
+    function goNextPage() {
+        if (currentState < maxState) {
+            currentState++;
+        } else {
+            currentState = 0; // Loop back to start
+        }
+        updateBookState();
+    }
+
+
+    function goPrevPage() {
+        if (currentState > 0) {
+            currentState--;
+        } else {
+            currentState = maxState; // Loop to end
+        }
+        updateBookState();
+    }
+
+
+    // 4. MENU TAB NAVIGATION
+    function goToNav(navIndex) {
+        if (navIndex === 0) currentState = 0;      // Cover
+        else if (navIndex === 1) currentState = 1; // Intro
+        else if (navIndex === 2) currentState = 1; // Table of Contents
+        else if (navIndex === 3) currentState = 2; // Confessions
+        else if (navIndex === 4) currentState = 2; // Reflection
+        else if (navIndex === 5) currentState = 3; // Prayer
+        else if (navIndex === 6) currentState = 3; // Members
+       
+        updateBookState();
+    }
+
+
+    function updateActiveNavPill() {
+        const navMap = [0, 1, 1, 2, 2, 3, 3];
+        navPills.forEach((pill, idx) => {
+            pill.classList.toggle("active", navMap[idx] === currentState);
+        });
+    }
+
+
+    // 5. EVENT LISTENERS
+    prevBtn.addEventListener("click", goPrevPage);
+    nextBtn.addEventListener("click", goNextPage);
+
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") goNextPage();
+        if (e.key === "ArrowLeft") goPrevPage();
+    });
+
+
+    // Initialize book layout
+    updateBookState();
+</script>
+
+
+</body>
+</html>
+

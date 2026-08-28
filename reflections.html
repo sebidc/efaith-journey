@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Faith Journey | Reflections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Content/Site.css">
+</head>
+<body>
+<div class="app-viewport">
+    <nav class="top-nav" aria-label="Primary navigation">
+        <a class="nav-pill" href="index.html">Home</a>
+        <a class="nav-pill active" href="reflections.html" aria-current="page">Reflections</a>
+        <a class="nav-pill" href="confessions.html">Confessions</a>
+        <a class="nav-pill" href="faith-insights.html">Faith Insights</a>
+    </nav>
+
+    <main class="main-stage">
+        <div class="lace-border lace-left"></div>
+        <button id="prev-btn" class="book-button" type="button" aria-label="Previous book page"><span aria-hidden="true">&#8249;</span></button>
+        <section id="book" class="book" aria-label="Reflections book">
+            <article class="paper">
+                <div class="front"><div class="front-content cover-style"><div class="gold-frame"><div class="cover-title">Reflections</div><div class="cover-subtitle">Personal and Group<br>Faith Learning</div><div class="cover-group">Group 1</div></div></div></div>
+                <div class="back"><div class="back-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Redistributed from the original book</p><h2>Group Reflection</h2></div><div class="page-body"><p>Working together as Group 1 taught us that constructing software is much like building a faith community: every line of code requires care, intent, and structural integrity.</p><p>Collaboration made the project more than a technical requirement. It became a practice of patience, listening, correction, and shared responsibility.</p></div></div></div>
+            </article>
+            <article class="paper">
+                <div class="front"><div class="front-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Interactive page</p><h2>Personal Reflection</h2></div><div class="page-body"><div class="form-panel"><h3>Add a Reflection</h3><form class="book-form"><label>Reflection type<select name="kind"><option>Reflection</option><option>Group Reflection</option></select></label><label>Name or group<input name="author" required maxlength="80"></label><label>Reflection title<input name="title" required maxlength="100"></label><label>Reflection<textarea name="body" required data-character-count="#reflection-count" data-minimum="60"></textarea></label><p id="reflection-count" class="field-note"></p><label>Scripture connection<input name="scripture" maxlength="80"></label><button class="button primary" type="submit">Preview reflection</button></form></div></div></div></div>
+                <div class="back"><div class="back-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Questions for deeper thought</p><h2>Reflection Guide</h2></div><div class="page-body"><ul><li>Where did this project require humility?</li><li>How did code reveal order, purpose, or service?</li><li>What did the group learn about responsibility?</li></ul><p class="field-note">The `.cshtml` version of this page connects this form to C# storage when hosted with ASP.NET.</p></div></div></div>
+            </article>
+            <article class="paper">
+                <div class="front"><div class="front-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Closing</p><h2>The End</h2></div><div class="page-body centered"><p><em>Reflection becomes stronger when it leads to patience, service, and shared truth.</em></p></div></div></div>
+                <div class="back"><div class="back-content cover-style"><div class="gold-frame"><div class="cover-title">Reflections</div><div class="cover-subtitle">The Sacred Truth</div><div class="cover-group">Group 1</div></div></div></div>
+            </article>
+        </section>
+        <button id="next-btn" class="book-button" type="button" aria-label="Next book page"><span aria-hidden="true">&#8250;</span></button>
+        <div class="lace-border lace-right"></div>
+    </main>
+    <footer class="site-footer">Theology and Computer Programming Collaborative Project - Group 1</footer>
+</div>
+<script src="Scripts/site.js"></script>
+</body>
+</html>

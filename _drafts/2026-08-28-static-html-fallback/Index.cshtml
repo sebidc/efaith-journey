@@ -1,0 +1,42 @@
+@{
+    Layout = "~/_Shared/_Layout.cshtml";
+    Page.Title = "e-Faith Journey | Home";
+    Page.ActiveSection = "Home";
+
+    var panels = new List<dynamic> {
+        new {
+            Style = "cover",
+            Title = "The Sacred<br>Truth",
+            Subtitle = "Theology and Computer<br>Programming<br>Collaborative Project",
+            Footer = "Group 1",
+            Kicker = "",
+            Body = ""
+        },
+        new {
+            Style = "page",
+            Title = "Introduction",
+            Subtitle = "",
+            Footer = "",
+            Kicker = "Home",
+            Body = "<p>Welcome to e-Faith Journey, a theology reflection platform shaped from the original book presentation. The project explores how faith, logic, collaboration, and technology can serve a shared search for truth.</p><p>Instead of keeping every page inside one long HTML file, the book experience is now split into four ASP.NET Razor sections.</p>"
+        },
+        new {
+            Style = "page",
+            Title = "Journey Map",
+            Subtitle = "",
+            Footer = "",
+            Kicker = "Four sections",
+            Body = "<ol><li><strong>Home</strong> introduces the project.</li><li><strong>Reflections</strong> holds personal and group reflections.</li><li><strong>Confessions</strong> holds testimonial writing.</li><li><strong>Faith Insights</strong> holds prayer, shared experience, and practical wisdom.</li></ol>"
+        },
+        new {
+            Style = "page",
+            Title = "Featured Excerpts",
+            Subtitle = "",
+            Footer = "",
+            Kicker = "From the original content",
+            Body = "<p><em>Faith and logic are not opposing forces, but two sides of the same divine truth.</em></p><p>Working together taught us that building software can mirror building a faith community: every part needs care, purpose, and integrity.</p>"
+        }
+    };
+}
+
+@RenderPage("~/_Shared/_Book.cshtml", panels)

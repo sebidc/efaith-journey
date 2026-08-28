@@ -1,0 +1,33 @@
+@{
+    var title = Page.Title ?? "e-Faith Journey";
+    var active = Page.ActiveSection ?? "Home";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Content/Site.css">
+</head>
+<body>
+    <div class="app-viewport">
+        <nav class="top-nav" id="primary-navigation" aria-label="Primary navigation">
+            <a class="nav-pill @(active == "Home" ? "active" : null)" href="Index.cshtml" aria-current="@(active == "Home" ? "page" : null)">Home</a>
+            <a class="nav-pill @(active == "Reflections" ? "active" : null)" href="Reflections.cshtml" aria-current="@(active == "Reflections" ? "page" : null)">Reflections</a>
+            <a class="nav-pill @(active == "Confessions" ? "active" : null)" href="Confessions.cshtml" aria-current="@(active == "Confessions" ? "page" : null)">Confessions</a>
+            <a class="nav-pill @(active == "Faith Insights" ? "active" : null)" href="FaithInsights.cshtml" aria-current="@(active == "Faith Insights" ? "page" : null)">Faith Insights</a>
+        </nav>
+
+        @RenderBody()
+
+        <footer class="site-footer">
+            Theology and Computer Programming Collaborative Project - Group 1
+        </footer>
+    </div>
+    <script src="Scripts/site.js"></script>
+</body>
+</html>

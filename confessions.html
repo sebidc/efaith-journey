@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Faith Journey | Confessions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Content/Site.css">
+</head>
+<body>
+<div class="app-viewport">
+    <nav class="top-nav" aria-label="Primary navigation">
+        <a class="nav-pill" href="index.html">Home</a>
+        <a class="nav-pill" href="reflections.html">Reflections</a>
+        <a class="nav-pill active" href="confessions.html" aria-current="page">Confessions</a>
+        <a class="nav-pill" href="faith-insights.html">Faith Insights</a>
+    </nav>
+
+    <main class="main-stage">
+        <div class="lace-border lace-left"></div>
+        <button id="prev-btn" class="book-button" type="button" aria-label="Previous book page"><span aria-hidden="true">&#8249;</span></button>
+        <section id="book" class="book" aria-label="Confessions book">
+            <article class="paper">
+                <div class="front"><div class="front-content cover-style"><div class="gold-frame"><div class="cover-title">Confessions</div><div class="cover-subtitle">Honest Testimony<br>and Growth</div><div class="cover-group">Group 1</div></div></div></div>
+                <div class="back"><div class="back-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Redistributed from the original book</p><h2>Individual Confessions</h2></div><div class="page-body"><p><em>"Faith and logic are not opposing forces, but two sides of the same divine truth."</em></p><p>Through this project, each member explored how computational logic can reflect order, purpose, and spiritual growth.</p></div></div></div>
+            </article>
+            <article class="paper">
+                <div class="front"><div class="front-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Interactive page</p><h2>Submit Testimony</h2></div><div class="page-body"><div class="form-panel"><h3>Submit a Confession</h3><form class="book-form"><label>Name<input name="author" required maxlength="80"></label><label>Testimony title<input name="title" required maxlength="100"></label><label>Confession or testimony<textarea name="body" required data-confession-text data-character-count="#confession-count" data-minimum="80"></textarea></label><p id="confession-count" class="field-note"></p><label>Scripture connection<input name="scripture" maxlength="80"></label><div class="preview-box" data-confession-preview>Your testimonial preview will appear here as you type.</div><button class="button primary" type="submit">Preview confession</button></form></div></div></div></div>
+                <div class="back"><div class="back-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Meaning</p><h2>Confessional Focus</h2></div><div class="page-body"><p>This section is for naming growth honestly: what was difficult, what became clearer, and how faith shaped the way the group worked.</p><p class="field-note">The `.cshtml` version saves entries through C# when hosted with ASP.NET.</p></div></div></div>
+            </article>
+            <article class="paper">
+                <div class="front"><div class="front-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Closing</p><h2>The End</h2></div><div class="page-body centered"><p><em>Honest testimony is part of learning to walk in truth.</em></p></div></div></div>
+                <div class="back"><div class="back-content cover-style"><div class="gold-frame"><div class="cover-title">Confessions</div><div class="cover-subtitle">The Sacred Truth</div><div class="cover-group">Group 1</div></div></div></div>
+            </article>
+        </section>
+        <button id="next-btn" class="book-button" type="button" aria-label="Next book page"><span aria-hidden="true">&#8250;</span></button>
+        <div class="lace-border lace-right"></div>
+    </main>
+    <footer class="site-footer">Theology and Computer Programming Collaborative Project - Group 1</footer>
+</div>
+<script src="Scripts/site.js"></script>
+</body>
+</html>

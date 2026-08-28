@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Faith Journey | Faith Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Content/Site.css">
+</head>
+<body>
+<div class="app-viewport">
+    <nav class="top-nav" aria-label="Primary navigation">
+        <a class="nav-pill" href="index.html">Home</a>
+        <a class="nav-pill" href="reflections.html">Reflections</a>
+        <a class="nav-pill" href="confessions.html">Confessions</a>
+        <a class="nav-pill active" href="faith-insights.html" aria-current="page">Faith Insights</a>
+    </nav>
+
+    <main class="main-stage">
+        <div class="lace-border lace-left"></div>
+        <button id="prev-btn" class="book-button" type="button" aria-label="Previous book page"><span aria-hidden="true">&#8249;</span></button>
+        <section id="book" class="book" aria-label="Faith Insights book">
+            <article class="paper">
+                <div class="front"><div class="front-content cover-style"><div class="gold-frame"><div class="cover-title">Faith<br>Insights</div><div class="cover-subtitle">Prayer, Wisdom,<br>and Shared Experience</div><div class="cover-group">Group 1</div></div></div></div>
+                <div class="back"><div class="back-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Redistributed from the original book</p><h2>Final Prayer</h2></div><div class="page-body centered"><p><em>Lord God, Creator of wisdom and source of all truth, guide our minds as we learn and build. May our work in theology and technology bring honor to Your name and service to others.</em></p><p><strong>Amen.</strong></p></div></div></div>
+            </article>
+            <article class="paper">
+                <div class="front"><div class="front-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Project roles</p><h2>Members Face Card</h2></div><div class="page-body"><ul class="role-list"><li>Lead Developer / Designer</li><li>Theology Research Lead</li><li>Frontend Developer</li><li>Quality Assurance</li></ul></div></div></div>
+                <div class="back"><div class="back-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Interactive page</p><h2>Add Insight</h2></div><div class="page-body"><div class="form-panel"><h3>Add a Faith Insight</h3><form class="book-form"><label>Name or group<input name="author" required maxlength="80"></label><label>Insight title<input name="title" required maxlength="100"></label><label>Shared faith insight<textarea name="body" required data-character-count="#insight-count" data-minimum="50"></textarea></label><p id="insight-count" class="field-note"></p><label>Scripture connection<input name="scripture" maxlength="80"></label><button class="button primary" type="submit">Preview insight</button></form></div><p class="field-note">The `.cshtml` version saves entries through C# when hosted with ASP.NET.</p></div></div></div>
+            </article>
+            <article class="paper">
+                <div class="front"><div class="front-content parchment-style"><div class="watermark">Faith</div><div class="page-header"><p>Closing</p><h2>The End</h2></div><div class="page-body centered"><p><em>May every insight become wisdom in action.</em></p></div></div></div>
+                <div class="back"><div class="back-content cover-style"><div class="gold-frame"><div class="cover-title">Faith<br>Insights</div><div class="cover-subtitle">The Sacred Truth</div><div class="cover-group">Group 1</div></div></div></div>
+            </article>
+        </section>
+        <button id="next-btn" class="book-button" type="button" aria-label="Next book page"><span aria-hidden="true">&#8250;</span></button>
+        <div class="lace-border lace-right"></div>
+    </main>
+    <footer class="site-footer">Theology and Computer Programming Collaborative Project - Group 1</footer>
+</div>
+<script src="Scripts/site.js"></script>
+</body>
+</html>

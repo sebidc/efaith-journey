@@ -1,0 +1,50 @@
+@using EFaithJourney
+@using System.Web
+@{
+    Layout = "~/_Shared/_Layout.cshtml";
+    Page.Title = "e-Faith Journey | Faith Insights";
+    Page.ActiveSection = "Faith Insights";
+
+    var message = "";
+    if (IsPost) {
+        var author = (Request.Form["author"] ?? "").Trim();
+        var title = (Request.Form["title"] ?? "").Trim();
+        var body = (Request.Form["body"] ?? "").Trim();
+        var scripture = (Request.Form["scripture"] ?? "").Trim();
+
+        if (author.Length > 0 && title.Length > 0 && body.Length >= 50) {
+            FaithEntryRepository.AddEntry(new FaithEntry {
+                Kind = "Faith Insight",
+                Author = author,
+                Title = title,
+                Body = body,
+                ScriptureReference = scripture
+            });
+            message = "Faith insight saved through ASP.NET Razor and C#.";
+        } else {
+            message = "Please add a name, title, and at least 50 characters of insight.";
+        }
+    }
+
+    var entries = FaithEntryRepository.GetEntries("Faith Insight");
+    var insightForm = "<div class=\"form-panel\"><h3>Add a Faith Insight</h3>";
+    if (message.Length > 0) {
+        insightForm += "<p class=\"" + (message.StartsWith("Please") ? "validation-summary" : "success-message") + "\">" + HttpUtility.HtmlEncode(message) + "</p>";
+    }
+    insightForm += "<form method=\"post\" class=\"book-form\"><label>Name or group<input name=\"author\" required maxlength=\"80\"></label><label>Insight title<input name=\"title\" required maxlength=\"100\"></label><label>Shared faith insight<textarea name=\"body\" required data-character-count=\"#insight-count\" data-minimum=\"50\"></textarea></label><p id=\"insight-count\" class=\"field-note\"></p><label>Scripture connection<input name=\"scripture\" maxlength=\"80\"></label><button class=\"button primary\" type=\"submit\">Save insight</button></form></div>";
+
+    var listHtml = "<div class=\"toolbar\"><input type=\"search\" data-entry-search aria-label=\"Search insights\" placeholder=\"Search insights\"></div><div class=\"entry-list\">";
+    foreach (var entry in entries) {
+        listHtml += "<article class=\"entry-card\" data-entry-kind=\"" + HttpUtility.HtmlAttributeEncode(entry.Kind) + "\"><p class=\"entry-meta\">" + HttpUtility.HtmlEncode(entry.Author) + " - " + entry.CreatedAt.ToString("MMM d, yyyy") + "</p><h3>" + HttpUtility.HtmlEncode(entry.Title) + "</h3><p>" + HttpUtility.HtmlEncode(entry.Body) + "</p><blockquote>" + HttpUtility.HtmlEncode(entry.ScriptureReference) + "</blockquote></article>";
+    }
+    listHtml += "</div>";
+
+    var panels = new List<dynamic> {
+        new { Style = "cover", Title = "Faith<br>Insights", Subtitle = "Prayer, Wisdom,<br>and Shared Experience", Footer = "Group 1", Kicker = "", Body = "" },
+        new { Style = "page", Title = "Final Prayer", Subtitle = "", Footer = "", Kicker = "Redistributed from the original book", Body = "<p class=\"centered\"><em>Lord God, Creator of wisdom and source of all truth, guide our minds as we learn and build. May our work in theology and technology bring honor to Your name and service to others.</em></p><p class=\"centered\"><strong>Amen.</strong></p>" },
+        new { Style = "page", Title = "Members Face Card", Subtitle = "", Footer = "", Kicker = "Project roles", Body = "<ul class=\"role-list\"><li>Lead Developer / Designer</li><li>Theology Research Lead</li><li>Frontend Developer</li><li>Quality Assurance</li></ul>" },
+        new { Style = "page", Title = "Interactive Insights", Subtitle = "", Footer = "", Kicker = "Saved by C#", Body = insightForm + listHtml }
+    };
+}
+
+@RenderPage("~/_Shared/_Book.cshtml", panels)
