@@ -1,0 +1,338 @@
+/* 
+ * DOM structure (from devtools):
+ * .view-content (flex)
+ *   ├── .bases-header        ← toolbar ("Table ▿ 7 results ... Sort Filter")
+ *   ├── .bases-search-row    ← hidden
+ *   ├── .bases-error         ← hidden
+ *   └── .bases-view.spotlight-bases-view  ← OUR VIEW — needs flex:1
+ *
+ * .view-content is already display:flex from Obsidian.
+ * The fix: make our .bases-view fill remaining space with flex:1
+ */
+
+/* Dynamically override padding/overflow only when our wrapper is actively inside it */
+.bases-view:has(> .spotlight-bases-wrapper) {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    overflow: hidden !important;
+    outline: none;
+    padding: 0 !important;
+}
+
+.spotlight-bases-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-primary);
+}
+
+.spotlight-sidebar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: var(--background-modifier-border);
+    color: var(--text-normal);
+    border: none;
+    cursor: pointer;
+}
+
+.spotlight-sidebar-toggle:hover {
+    background-color: var(--background-modifier-border-hover);
+}
+
+.spotlight-fullscreen-toggle {
+    position: absolute;
+    top: 10px;
+    right: 130px;
+    z-index: 100;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: var(--background-modifier-border);
+    color: var(--text-normal);
+    border: none;
+    cursor: pointer;
+}
+
+.spotlight-fullscreen-toggle:hover {
+    background-color: var(--background-modifier-border-hover);
+}
+
+.spotlight-is-fullscreen .spotlight-sidebar-toggle,
+.spotlight-is-fullscreen .spotlight-fullscreen-toggle {
+    display: none;
+}
+
+.spotlight-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    overflow-y: auto;
+    min-width: 0;
+    background-color: var(--background-primary);
+}
+
+.spotlight-center.spotlight-center-no-padding {
+    padding: 0;
+    overflow: hidden;
+}
+
+.spotlight-center-content {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 0;
+}
+
+.spotlight-center-media-container {
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.spotlight-media {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* PDF container */
+.spotlight-center-pdf-container {
+    height: 100%;
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.spotlight-center-pdf-container .internal-embed {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.spotlight-center-pdf-container .pdf-embed,
+.spotlight-pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    flex: 1;
+}
+
+.spotlight-pdf-placeholder iframe.spotlight-pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.spotlight-attribute-content {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20vh;
+    color: var(--text-accent);
+}
+
+.spotlight-resizer {
+    width: 4px;
+    background-color: var(--background-modifier-border);
+    cursor: col-resize;
+    transition: background-color 0.2s ease;
+}
+
+.spotlight-resizer:hover, .spotlight-resizer:active {
+    background-color: var(--text-accent);
+}
+
+.spotlight-sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-secondary);
+    border-left: 1px solid var(--background-modifier-border);
+    padding: 1rem;
+    overflow-y: auto;
+    position: relative;
+}
+
+.spotlight-sidebar-title {
+    margin-top: 30px; /* Leave space for toggle button */
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 1.2em;
+}
+
+.spotlight-property {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--background-modifier-border);
+    padding-bottom: 0.5rem;
+    position: relative;
+}
+
+.spotlight-property-name {
+    font-weight: bold;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.spotlight-property-value {
+    color: var(--text-normal);
+}
+
+.spotlight-hyperlink-value {
+    color: var(--text-accent);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.spotlight-scrollable-text {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    word-break: break-word;
+    white-space: pre-wrap;
+    padding-right: 5px;
+}
+
+/* Custom scrollbar for property values */
+.spotlight-scrollable-text::-webkit-scrollbar {
+    width: 4px;
+}
+
+.spotlight-scrollable-text::-webkit-scrollbar-thumb {
+    background-color: var(--background-modifier-border);
+    border-radius: 4px;
+}
+
+.spotlight-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.spotlight-nav-btn {
+    padding: 4px 12px;
+    background-color: var(--interactive-normal);
+    color: var(--text-normal);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.spotlight-nav-btn:hover:not(:disabled) {
+    background-color: var(--interactive-hover);
+}
+
+.spotlight-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.spotlight-count {
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 0.85em;
+}
+
+.spotlight-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: 1.2em;
+}
+
+.spotlight-property-value-container {
+    cursor: text;
+    display: flex;
+    flex-direction: column;
+    max-height: 150px;
+}
+
+.spotlight-property-edit-input {
+    width: 100%;
+    min-height: 50px;
+    flex: 1;
+    font-family: inherit;
+    font-size: inherit;
+    background: var(--background-modifier-form-field);
+    color: var(--text-normal);
+    border: 1px solid var(--background-modifier-border-hover);
+    border-radius: 4px;
+    padding: 4px;
+    resize: none;
+}
+
+/* Property Drag and Drop Resizing */
+.spotlight-property-resizer {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    cursor: ns-resize;
+    z-index: 10;
+    transition: background-color 0.1s ease;
+}
+
+.spotlight-property-resizer:hover, .spotlight-property-resizer:active {
+    background-color: var(--interactive-accent);
+}
+
+.spotlight-property-dragging {
+    opacity: 0.5;
+}
+
+.spotlight-property-drag-over {
+    border-top: 2px solid var(--interactive-accent);
+}
+
+.spotlight-property-drag-below {
+    border-bottom: 2px solid var(--interactive-accent);
+}
+
+/* Allow list values to fill up one line before wrapping */
+.value-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+/* Center and enlarge error messages */
+.spotlight-error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.spotlight-error-icon {
+    font-size: 4em;
+    margin-bottom: 15px;
+}
+
+.spotlight-error-message {
+    font-size: 1.5em;
+    font-weight: 500;
+}

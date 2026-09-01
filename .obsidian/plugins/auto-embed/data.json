@@ -1,0 +1,25 @@
+{
+  "darkMode": true,
+  "preloadOption": 1,
+  "suggestEmbed": true,
+  "enabledWebsites": {
+    "Twitter/X": true,
+    "Imgur": true,
+    "Reddit": true,
+    "CodePen": true,
+    "Google Docs": true,
+    "SoundCloud": true,
+    "Spotify": true,
+    "Steam": true,
+    "TikTok": true,
+    "Instagram": true
+  },
+  "googleDocsViewOption": 0,
+  "fallbackOptions": 1,
+  "fallbackWidth": "100%",
+  "fallbackHeight": "500px",
+  "fallbackDefaultLink": "Link",
+  "fallbackAutoTitle": true,
+  "showAdvancedSettings": false,
+  "debug": false
+}

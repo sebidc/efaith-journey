@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "sessionId": "72b51764-a979-4b19-8656-6464166bb1b5",
+  "agentId": "hermes-agent",
+  "cwd": "/Users/sebi/Library/Mobile Documents/iCloud~md~obsidian/Documents/sebi",
+  "title": "the format here of  @[[COLLEGE TEMPLATE]] , you...",
+  "createdAt": "2026-08-10T01:35:44.418Z",
+  "updatedAt": "2026-08-10T01:35:44.420Z",
+  "messages": [
+    {
+      "id": "5e074de0-a50b-4300-ba97-e0253fae7e0b",
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "the format here of  @[[COLLEGE TEMPLATE]] , you will use this everytime i want to fix infos of college applications. do this on  @[[UST]] ,  @[[NU]]   @[[MAPUA]]  @[[FEU TECH]] . and then search additional info from the internet"
+        }
+      ],
+      "timestamp": "2026-08-10T01:35:20.552Z"
+    },
+    {
+      "id": "01959a8f-fbc9-4cf6-aa1e-9147f20a39c4",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "API call failed after 3 retries: Connection error."
+        }
+      ],
+      "timestamp": "2026-08-10T01:35:44.430Z"
+    }
+  ],
+  "savedAt": "2026-08-10T01:35:45.234Z"
+}

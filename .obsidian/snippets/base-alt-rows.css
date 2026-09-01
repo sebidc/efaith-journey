@@ -1,0 +1,13 @@
+/* Sets alternating background colors for Base table rows */
+.bases-tr:nth-child(even) {
+  background-color: var(--background-secondary-alt);
+}
+
+.bases-tr:nth-child(odd) {
+  background-color: var(--background-primary);
+}
+
+/* Darkens the row when your mouse hovers over it */
+.bases-tr:hover {
+  background-color: var(--background-modifier-hover) !important;
+}

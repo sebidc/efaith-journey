@@ -1,0 +1,20 @@
+{
+  "showInlineTitle": true,
+  "readableLineLength": true,
+  "showLineNumber": false,
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "1",
+    "downscalePercent": 100
+  },
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Notes",
+  "showUnsupportedFiles": true,
+  "foldHeading": true,
+  "propertiesInDocument": "hidden",
+  "defaultViewMode": "source"
+}

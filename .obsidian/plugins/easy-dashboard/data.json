@@ -1,0 +1,12 @@
+{
+  "userName": "Friend",
+  "homeNotePath": "System/Home.md",
+  "folderViewNotePath": "System/_Folder View.md",
+  "tagViewNotePath": "System/_Tag View.md",
+  "inboxFolderPath": "Inbox",
+  "templatePath": "",
+  "mapNotePath": "",
+  "openOnStartup": true,
+  "openInReadingView": true,
+  "hasSeenWelcomeNotice": true
+}

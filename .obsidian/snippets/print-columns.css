@@ -1,0 +1,102 @@
+@page {
+  margin: 14mm 12.5mm 14mm 12.5mm;
+}
+
+/* Normal note view */
+.markdown-rendered .col-1,
+.markdown-rendered .col-2 {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.markdown-rendered .col-1 {
+  column-count: 1;
+  column-gap: 2em;
+}
+
+.markdown-rendered .col-2 {
+  column-count: 2;
+  column-gap: 2em;
+  column-rule: 1px solid #eee;
+}
+
+.markdown-rendered .col-1 > :first-child,
+.markdown-rendered .col-2 > :first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-rendered .col-1 > :last-child,
+.markdown-rendered .col-2 > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-rendered .page-break {
+  display: none;
+}
+
+/* PDF export only */
+@media print {
+  .markdown-rendered {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .markdown-rendered .page-break {
+    display: block !important;
+    break-before: page !important;
+    page-break-before: always !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .markdown-rendered .page-break + h1 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .markdown-rendered h1 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .markdown-rendered h2,
+  .markdown-rendered h3 {
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+
+  .markdown-rendered table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .markdown-rendered tr,
+  .markdown-rendered td,
+  .markdown-rendered th {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    vertical-align: top;
+  }
+
+  .markdown-rendered ul,
+  .markdown-rendered ol,
+  .markdown-rendered blockquote {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .markdown-rendered .col-1,
+  .markdown-rendered .col-2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}

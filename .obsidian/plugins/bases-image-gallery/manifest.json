@@ -1,0 +1,10 @@
+{
+  "id": "bases-image-gallery",
+  "name": "Bases Image Gallery",
+  "version": "0.1.6",
+  "minAppVersion": "1.10.2",
+  "description": "A zero-setup masonry image gallery view for Bases.",
+  "author": "Gilbert Hyatt",
+  "authorUrl": "https://github.com/ghyatt",
+  "isDesktopOnly": false
+}

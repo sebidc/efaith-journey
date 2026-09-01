@@ -1,0 +1,185 @@
+{
+  "presetAgents": {
+    "claude-code-acp": {
+      "id": "claude-code-acp",
+      "displayName": "Claude Code",
+      "apiKeySecretId": "",
+      "command": "claude-agent-acp",
+      "args": [],
+      "env": [],
+      "enabled": true
+    },
+    "codex-acp": {
+      "id": "codex-acp",
+      "displayName": "Codex",
+      "apiKeySecretId": "",
+      "command": "codex-acp",
+      "args": [],
+      "env": [],
+      "enabled": true
+    },
+    "gemini-cli": {
+      "id": "gemini-cli",
+      "displayName": "Gemini CLI",
+      "apiKeySecretId": "",
+      "command": "gemini",
+      "args": [
+        "--experimental-acp"
+      ],
+      "env": [],
+      "enabled": true
+    },
+    "mistral-vibe": {
+      "id": "mistral-vibe",
+      "displayName": "Mistral Vibe",
+      "apiKeySecretId": "",
+      "command": "vibe-acp",
+      "args": [],
+      "env": [],
+      "enabled": true
+    },
+    "opencode": {
+      "id": "opencode",
+      "displayName": "OpenCode",
+      "apiKeySecretId": "",
+      "command": "opencode",
+      "args": [
+        "acp"
+      ],
+      "env": [],
+      "enabled": true
+    },
+    "kiro-cli": {
+      "id": "kiro-cli",
+      "displayName": "Kiro",
+      "apiKeySecretId": "",
+      "command": "kiro-cli",
+      "args": [
+        "acp"
+      ],
+      "env": [],
+      "enabled": true
+    },
+    "hermes-agent": {
+      "id": "hermes-agent",
+      "displayName": "Hermes Agent",
+      "apiKeySecretId": "",
+      "command": "hermes",
+      "args": [
+        "acp"
+      ],
+      "env": [],
+      "enabled": true
+    }
+  },
+  "customAgents": [],
+  "defaultAgentId": "claude-code-acp",
+  "autoAllowPermissions": false,
+  "autoMentionActiveNote": true,
+  "expandWikilinkContext": true,
+  "enableSystemNotifications": true,
+  "promptInjection": {
+    "enabled": true,
+    "latex": true,
+    "wikiLinks": true,
+    "tables": true
+  },
+  "debugMode": false,
+  "nodePath": "",
+  "exportSettings": {
+    "defaultFolder": "Agent Client",
+    "filenameTemplate": "agent_client_{date}_{time}",
+    "autoExportOnNewChat": false,
+    "autoExportOnCloseChat": false,
+    "openFileAfterExport": true,
+    "includeImages": true,
+    "imageLocation": "obsidian",
+    "imageCustomFolder": "Agent Client",
+    "frontmatterTag": "agent-client"
+  },
+  "windowsWslMode": false,
+  "sendMessageShortcut": "enter",
+  "chatViewLocation": "right-tab",
+  "displaySettings": {
+    "autoCollapseDiffs": false,
+    "diffCollapseThreshold": 10,
+    "maxNoteLength": 10000,
+    "maxSelectionLength": 10000,
+    "showEmojis": true,
+    "fontSize": null
+  },
+  "savedSessions": [
+    {
+      "sessionId": "72b51764-a979-4b19-8656-6464166bb1b5",
+      "agentId": "hermes-agent",
+      "cwd": "/Users/sebi/Library/Mobile Documents/iCloud~md~obsidian/Documents/sebi",
+      "title": "the format here of  @[[COLLEGE TEMPLATE]] , you...",
+      "createdAt": "2026-08-10T01:35:44.418Z",
+      "updatedAt": "2026-08-10T01:35:45.234Z"
+    },
+    {
+      "sessionId": "427f65c7-790c-4a09-911d-d435994d5622",
+      "agentId": "hermes-agent",
+      "cwd": "/Users/sebi/Library/Mobile Documents/iCloud~md~obsidian/Documents/sebi",
+      "title": "copy the format or rely in   @[[openclaw]]  , a...",
+      "createdAt": "2026-08-09T14:36:22.323Z",
+      "updatedAt": "2026-08-09T14:36:22.325Z"
+    },
+    {
+      "sessionId": "82dc0945-6801-45a0-b708-3ac1937dd861",
+      "agentId": "hermes-agent",
+      "cwd": "/Users/sebi/Library/Mobile Documents/iCloud~md~obsidian/Documents/sebi",
+      "title": "copy the format or rely in  @[[openclaw]] , and...",
+      "createdAt": "2026-08-09T14:24:05.576Z",
+      "updatedAt": "2026-08-09T14:29:13.594Z"
+    },
+    {
+      "sessionId": "972c4bdc-6d11-4798-8358-56dda503e9eb",
+      "agentId": "hermes-agent",
+      "cwd": "/Users/sebi/Library/Mobile Documents/iCloud~md~obsidian/Documents/sebi",
+      "title": "hello who is this?",
+      "createdAt": "2026-08-09T01:48:21.462Z",
+      "updatedAt": "2026-08-09T01:48:48.347Z"
+    },
+    {
+      "sessionId": "67872952-5e65-46f2-9632-300575808969",
+      "agentId": "hermes-agent",
+      "cwd": "/Users/sebi/Library/Mobile Documents/iCloud~md~obsidian/Documents/sebi",
+      "title": "hello, who is this?",
+      "createdAt": "2026-08-09T01:44:56.774Z",
+      "updatedAt": "2026-08-09T01:45:06.718Z"
+    },
+    {
+      "sessionId": "6be2b878-0b08-41c1-9496-914891c8436f",
+      "agentId": "hermes-agent",
+      "cwd": "/Users/sebi/Library/Mobile Documents/iCloud~md~obsidian/Documents/sebi",
+      "title": "hello?",
+      "createdAt": "2026-08-09T01:43:57.203Z",
+      "updatedAt": "2026-08-09T01:43:57.205Z"
+    },
+    {
+      "sessionId": "86209fff-9a1f-4bd7-866b-a02bec1ca72e",
+      "agentId": "hermes-agent",
+      "cwd": "/Users/sebi/Library/Mobile Documents/iCloud~md~obsidian/Documents/sebi",
+      "title": "hello",
+      "createdAt": "2026-08-09T00:56:23.725Z",
+      "updatedAt": "2026-08-09T00:56:23.727Z"
+    }
+  ],
+  "lastUsedModels": {},
+  "lastUsedModes": {
+    "hermes-agent": "default"
+  },
+  "lastUsedConfigOptions": {},
+  "enableFloatingChat": false,
+  "floatingButtonImage": "",
+  "floatingWindowSize": {
+    "width": 400,
+    "height": 500
+  },
+  "floatingWindowPosition": {
+    "x": 1260,
+    "y": 422
+  },
+  "floatingButtonPosition": null
+}

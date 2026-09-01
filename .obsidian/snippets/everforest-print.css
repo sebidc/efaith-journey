@@ -1,0 +1,113 @@
+/* ==========================================================================
+   1. LIVE WORKSPACE STYLES (Applies to your active Obsidian theme view)
+   ========================================================================== */
+.theme-light {
+  /* Core Background Canvas and Accent Text Colors */
+  --background-primary: #FFFBEF !important;       /* Everforest Light Soft Background 0 */
+  --background-primary-alt: #F3EAD3 !important;   /* Table Alt Lines Background */
+  --background-secondary: #E5DFC5 !important;     /* Sidebar & Base Workspace Canvas */
+  --background-secondary-alt: #EAE4CA !important; /* Blockquote & Structural Fill */
+  
+  /* Forces ALL text properties to your exact target color */
+  --text-normal: #5C6A72 !important;              
+  --text-muted: #5C6A72 !important;
+  --h1-color: #5C6A72 !important;                 
+  --h2-color: #5C6A72 !important;
+  --h3-color: #5C6A72 !important;
+  --h4-color: #5C6A72 !important;
+  --h5-color: #5C6A72 !important;
+  --h6-color: #5C6A72 !important;
+  --link-color: #5C6A72 !important;               
+  --link-color-hover: #5C6A72 !important;         
+  --code-normal: #5C6A72 !important;              
+  
+  /* Layout Accents */
+  --blockquote-border-color: #DFA000 !important;  /* Everforest Yellow Line */
+  --code-background: #F3EAD3 !important;          /* Inline Code Wrap Fill */
+  --divider-color: #DDD8BE !important;            /* Table Borders / Line Layout Separators */
+}
+
+/* Force heading underline separator colors in live edit/preview modes */
+.theme-light h1, .theme-light h2,
+.theme-light .markdown-rendered h1, .theme-light .markdown-rendered h2,
+.theme-light .cm-heading-1, .theme-light .cm-heading-2 {
+  border-bottom-color: #5C6A72 !important;
+}
+
+/* Force list bullets, numbers, and everything inside active workspace to use your text color */
+.theme-light ul li::marker, 
+.theme-light ol li::marker,
+.theme-light blockquote,
+.theme-light th,
+.theme-light td {
+  color: #5C6A72 !important;
+}
+
+/* Alternate Row Colors + Hover Effects for Live View Workspace Base Tables */
+.theme-light .bases-tr:nth-child(even), .theme-light tr:nth-child(even) {
+  background-color: #EAE4CA !important;           
+}
+.theme-light .bases-tr:nth-child(odd), .theme-light tr:nth-child(odd) {
+  background-color: #F3EAD3 !important;
+}
+.theme-light .bases-tr:hover, .theme-light tr:hover {
+  background-color: #BDC3AF !important;           
+}
+
+
+/* ==========================================================================
+   2. EXPORT TO PDF & PRINT STYLES (Maintains the exact 3cm layout)
+   ========================================================================== */
+@media print {
+  @page {
+    background-color: #E5DFC5 !important;
+    margin-top: 20mm !important;
+    margin-left: 20mm !important;
+    margin-right: 20mm !important;
+    margin-bottom: 3cm !important;                /* Retains the explicit 3cm bottom layout height */
+  }
+
+  /* Universal text color force for every printable element */
+  html, body, .print, .markdown-preview-view, .markdown-rendered, .markdown-preview-sizer,
+  h1, h2, h3, h4, h5, h6, a, .cm-link, .markdown-preview-view a, 
+  code, pre, blockquote, th, td, ul li::marker, ol li::marker {
+    color: #5C6A72 !important;
+  }
+
+  /* Force heading lines in printed PDF output files */
+  h1, h2, .markdown-rendered h1, .markdown-rendered h2 {
+    border-bottom-color: #5C6A72 !important;
+  }
+
+  html, body, .print, .markdown-preview-view, .markdown-rendered, .markdown-preview-sizer {
+    background-color: #E5DFC5 !important;
+    -webkit-print-color-adjust: exact !important; 
+    print-color-adjust: exact !important;
+  }
+  
+  a, .cm-link, .markdown-preview-view a { 
+    text-decoration: underline; 
+  }
+  
+  code {
+    background-color: #F3EAD3 !important;
+    border-radius: 4px;
+    padding: 2px 4px;
+  }
+  
+  pre, code[class*="language-"] {
+    background-color: #F3EAD3 !important;
+    border: 1px solid #DDD8BE !important;
+  }
+
+  blockquote {
+    border-left: 4px solid #DFA000 !important;
+    background-color: #EAE4CA !important;
+  }
+
+  table, tr, td, th, .bases-table { border-color: #DDD8BE !important; }
+  th { background-color: #EAE4CA !important; }
+
+  .bases-tr:nth-child(even), tr:nth-child(even) { background-color: #EAE4CA !important; }
+  .bases-tr:nth-child(odd), tr:nth-child(odd) { background-color: #F3EAD3 !important; }
+}

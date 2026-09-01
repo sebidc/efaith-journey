@@ -1,0 +1,184 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": true,
+  "hideUnresolved": true,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:School/College/Universities/UP  ",
+      "color": {
+        "a": 1,
+        "rgb": 14701152
+      }
+    },
+    {
+      "query": "path:School/College/Universities/Databases/BULSU  ",
+      "color": {
+        "a": 1,
+        "rgb": 14717522
+      }
+    },
+    {
+      "query": "path:School/College/Universities/Databases/ATENEO  ",
+      "color": {
+        "a": 1,
+        "rgb": 3160768
+      }
+    },
+    {
+      "query": "path:School/College/Universities/Databases/UST  ",
+      "color": {
+        "a": 1,
+        "rgb": 14732626
+      }
+    },
+    {
+      "query": "path:School/College/Universities/Databases/NU  ",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
+      }
+    },
+    {
+      "query": "path:School/College/Universities/Databases/MAPUA  ",
+      "color": {
+        "a": 1,
+        "rgb": 14701159
+      }
+    },
+    {
+      "query": "path:\"School/College/Universities/Databases/FEU TECH\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 3190854
+      }
+    },
+    {
+      "query": "path:School/College/Universities/Databases/DCAT  ",
+      "color": {
+        "a": 1,
+        "rgb": 5878355
+      }
+    },
+    {
+      "query": "path:School/LCUP  ",
+      "color": {
+        "a": 1,
+        "rgb": 2503248
+      }
+    },
+    {
+      "query": "path:\"3 AM Ideas\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 9461832
+      }
+    },
+    {
+      "query": "path:Prompts  ",
+      "color": {
+        "a": 1,
+        "rgb": 9461832
+      }
+    },
+    {
+      "query": "path:Business  ",
+      "color": {
+        "a": 1,
+        "rgb": 8682584
+      }
+    },
+    {
+      "query": "path:Coding  ",
+      "color": {
+        "a": 1,
+        "rgb": 5991754
+      }
+    },
+    {
+      "query": "path:Confidential  ",
+      "color": {
+        "a": 1,
+        "rgb": 6388095
+      }
+    },
+    {
+      "query": "path:Family  ",
+      "color": {
+        "a": 1,
+        "rgb": 6388095
+      }
+    },
+    {
+      "query": "path:Media  ",
+      "color": {
+        "a": 1,
+        "rgb": 5204601
+      }
+    },
+    {
+      "query": "path:Notes  ",
+      "color": {
+        "a": 1,
+        "rgb": 5201281
+      }
+    },
+    {
+      "query": "path:Personal  ",
+      "color": {
+        "a": 1,
+        "rgb": 5920104
+      }
+    },
+    {
+      "query": "path:_Templates  ",
+      "color": {
+        "a": 1,
+        "rgb": 9453381
+      }
+    },
+    {
+      "query": "path:Skills/Research  ",
+      "color": {
+        "a": 1,
+        "rgb": 5011128
+      }
+    },
+    {
+      "query": "path:School  ",
+      "color": {
+        "a": 1,
+        "rgb": 5536699
+      }
+    },
+    {
+      "query": "path:FMHY  ",
+      "color": {
+        "a": 1,
+        "rgb": 13680487
+      }
+    },
+    {
+      "query": "path:Skills  ",
+      "color": {
+        "a": 1,
+        "rgb": 12550699
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": -1.6,
+  "nodeSizeMultiplier": 2.31435991957105,
+  "lineSizeMultiplier": 2.01905719392315,
+  "collapse-forces": false,
+  "centerStrength": 0.865616621983914,
+  "repelStrength": 20,
+  "linkStrength": 1,
+  "linkDistance": 30,
+  "scale": 0.34505544357900514,
+  "close": true
+}

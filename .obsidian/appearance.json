@@ -1,0 +1,27 @@
+{
+  "accentColor": "#17929b",
+  "translucency": true,
+  "cssTheme": "AnuPpuccin",
+  "showViewHeader": true,
+  "nativeMenus": true,
+  "theme": "obsidian",
+  "showRibbon": true,
+  "autoFullScreen": true,
+  "slidingSidebar": true,
+  "floatingNavigation": true,
+  "interfaceFontFamily": "",
+  "baseFontSize": 13,
+  "baseFontSizeAction": false,
+  "enabledCssSnippets": [
+    "two-collumn",
+    "two-columns",
+    "one-column",
+    "print-columns",
+    "extended-colorschemes",
+    "base-alt-rows",
+    "everforest",
+    "everforest-print"
+  ],
+  "monospaceFontFamily": "",
+  "textFontFamily": ""
+}
