@@ -40,9 +40,9 @@
     listHtml += "</div>";
 
     var panels = new List<dynamic> {
-        new { Style = "cover", Title = "Faith<br>Insights", Subtitle = "Prayer, Wisdom,<br>and Shared Experience", Footer = "Group 1", Kicker = "", Body = "" },
-        new { Style = "page", Title = "Final Prayer", Subtitle = "", Footer = "", Kicker = "Redistributed from the original book", Body = "<p class=\"centered\"><em>Lord God, Creator of wisdom and source of all truth, guide our minds as we learn and build. May our work in theology and technology bring honor to Your name and service to others.</em></p><p class=\"centered\"><strong>Amen.</strong></p>" },
-        new { Style = "page", Title = "Members Face Card", Subtitle = "", Footer = "", Kicker = "Project roles", Body = "<ul class=\"role-list\"><li>Lead Developer / Designer</li><li>Theology Research Lead</li><li>Frontend Developer</li><li>Quality Assurance</li></ul>" },
+        new { Style = "cover", Title = "Faith<br>Insights", Subtitle = "Wisdom and<br>Shared Experience", Footer = "Group 1", Kicker = "", Body = "" },
+        new { Style = "page", Title = "Insights", Subtitle = "", Footer = "", Kicker = "Shared wisdom", Body = "<p class=\"copy-slot\">Write the group&rsquo;s original faith insights here. Replace this box. The Final Prayer now lives on the Prayer page. Member profiles now live on Developers.</p>" },
+        new { Style = "page", Title = "Also in this book", Subtitle = "", Footer = "", Kicker = "Where to go next", Body = "<ul><li><a href=\"Prayer.cshtml\">Final Prayer or Vow</a></li><li><a href=\"Developers.cshtml\">Developers&rsquo; Information</a></li></ul>" },
         new { Style = "page", Title = "Interactive Insights", Subtitle = "", Footer = "", Kicker = "Saved by C#", Body = insightForm + listHtml },
         new { Style = "page", Title = "The End", Subtitle = "", Footer = "", Kicker = "Closing", Body = "<p class=\"centered\"><em>May every insight become wisdom in action.</em></p>" }
     };

@@ -1,0 +1,37 @@
+@using System.Web
+@{
+    Layout = "~/_Shared/_Layout.cshtml";
+    Page.Title = "e-Faith Journey | Developers";
+    Page.ActiveSection = "Developers";
+
+    var members = new[] {
+        new { File = "ABASOLO", Initials = "YA", Name = "Abasolo, Yancy Shawn", Role = "Theology Researcher", Age = "To be added", Birthday = "To be added", Motto = "To be added" },
+        new { File = "BAYAN", Initials = "IB", Name = "Bayan, Irish Mae", Role = "Web Designer", Age = "To be added", Birthday = "To be added", Motto = "To be added" },
+        new { File = "CRISOSTOMO", Initials = "SC", Name = "Crisostomo, Sophia Rasmin", Role = "Web Designer", Age = "17", Birthday = "June 22, 2009", Motto = "If you are scared to fail, it doesn’t mean you’re weak; it means you’re ready to face difficult challenges in life." },
+        new { File = "DELA-CRUZ", Initials = "SD", Name = "Dela Cruz, Sebastian Guile", Role = "Front-End & Back-End Developer", Age = "To be added", Birthday = "To be added", Motto = "To be added" },
+        new { File = "HERNANDEZ", Initials = "JH", Name = "Hernandez, Jim Cedrick", Role = "Project Manager & Front-End Developer", Age = "18", Birthday = "March 18, 2008", Motto = "Acting without thinking is reckless, thinking without acting is useless" },
+        new { File = "LUCAS", Initials = "AL", Name = "Lucas, Aldrin", Role = "Front-End Developer", Age = "17", Birthday = "November 11, 2008", Motto = "With God’s guidance, I can overcome my struggles and become better each day." },
+        new { File = "MANUEL", Initials = "JM", Name = "Manuel, John Noah", Role = "Front-End Developer", Age = "18", Birthday = "April 18, 2008", Motto = "Trust God, trust the process, keep moving forward." },
+        new { File = "PANGANIBAN", Initials = "SP", Name = "Panganiban, Steven Karl", Role = "Theology Researcher", Age = "To be added", Birthday = "To be added", Motto = "To be added" },
+        new { File = "QUIAMBAO", Initials = "EQ", Name = "Quiambao, Evan Joshua", Role = "Theology Researcher", Age = "16", Birthday = "December 28, 2009", Motto = "Everything happens for a reason, yet the outcome depends on how you choose to respond." },
+        new { File = "RAMOS", Initials = "RR", Name = "Ramos, Rhiangael", Role = "Theology Researcher", Age = "To be added", Birthday = "To be added", Motto = "To be added" },
+        new { File = "ROQUE", Initials = "SR", Name = "Roque, Stephen Paul Marcus", Role = "Theology Researcher", Age = "To be added", Birthday = "To be added", Motto = "To be added" },
+        new { File = "TAPICERIA", Initials = "VT", Name = "Tapiceria, Vincent John", Role = "Theology Researcher", Age = "To be added", Birthday = "To be added", Motto = "To be added" },
+        new { File = "VILLENA", Initials = "KV", Name = "Villena, Khenjie", Role = "Web Designer", Age = "To be added", Birthday = "To be added", Motto = "To be added" }
+    };
+
+    var panels = new List<dynamic> {
+        new { Style = "cover", Title = "Developers", Subtitle = "Group Members", Footer = "Group 1", Kicker = "", Body = "" }
+    };
+
+    foreach (var member in members) {
+        var photo = "Content/photos/" + member.File + ".jpg";
+        var resume = "Content/resumes/" + member.File + ".pdf";
+        var info = "<div class=\"member-card\"><div class=\"member-photo-wrap\"><span class=\"member-initials\">" + member.Initials + "</span><img src=\"" + photo + "\" alt=\"" + HttpUtility.HtmlAttributeEncode(member.Name) + "\" onerror=\"this.remove()\"></div><ul class=\"member-facts\"><li><strong>Name</strong><br>" + HttpUtility.HtmlEncode(member.Name) + "</li><li><strong>Role</strong><br>" + HttpUtility.HtmlEncode(member.Role) + "</li><li><strong>Age</strong><br>" + HttpUtility.HtmlEncode(member.Age) + "</li><li><strong>Birthday</strong><br>" + HttpUtility.HtmlEncode(member.Birthday) + "</li><li><strong>Motto</strong><br>&ldquo;" + HttpUtility.HtmlEncode(member.Motto) + "&rdquo;</li></ul></div>";
+        var resumeHtml = "<div class=\"resume-panel\"><p class=\"field-note\">Upload later: " + resume + "</p><div class=\"resume-frame\"><iframe src=\"" + resume + "\" title=\"" + HttpUtility.HtmlAttributeEncode(member.Name) + " resume\"></iframe></div><p class=\"resume-actions\"><a href=\"" + resume + "\">Open " + member.File + ".pdf</a></p></div>";
+        panels.Add(new { Style = "page", Title = member.Name.Split(',')[0], Subtitle = "", Footer = "", Kicker = "Member information", Body = info });
+        panels.Add(new { Style = "page", Title = "Resume", Subtitle = "", Footer = "", Kicker = member.File + ".pdf", Body = resumeHtml });
+    }
+}
+
+@RenderPage("~/_Shared/_Book.cshtml", panels)

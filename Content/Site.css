@@ -47,12 +47,12 @@
             background: rgba(241, 228, 207, 0.9);
             color: #2b1f14;
             border: 1px solid #c9b38c;
-            padding: 7px 20px;
+            padding: 6px 14px;
             border-radius: 25px;
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
@@ -490,4 +490,112 @@
             }
             #prev-btn { left: 15px; }
             #next-btn { right: 15px; }
+        }
+
+        .copy-slot {
+            min-height: 4.5em;
+            padding: 10px;
+            border: 1px dashed #b59a70;
+            border-radius: 6px;
+            background: rgba(255, 252, 245, 0.7);
+        }
+
+        .section-label {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 3px 10px;
+            border: 1px solid #c9b38c;
+            border-radius: 999px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.6px;
+            background: rgba(255, 251, 241, 0.8);
+        }
+
+        .page-header.compact h2 {
+            font-size: 2.2rem;
+        }
+
+        .member-card,
+        .resume-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 100%;
+        }
+
+        .member-photo-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            max-height: 210px;
+            border: 1px solid #c9b38c;
+            border-radius: 8px;
+            overflow: hidden;
+            background: linear-gradient(180deg, #efe4cc 0%, #d9c7a3 100%);
+        }
+
+        .member-initials {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #5a4225;
+        }
+
+        .member-photo-wrap img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-facts {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            text-align: left;
+        }
+
+        .member-facts strong {
+            font-family: 'Cinzel', serif;
+            font-size: 0.78rem;
+        }
+
+        .resume-frame {
+            flex: 1;
+            min-height: 220px;
+            border: 1px solid #c9b38c;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fffdf8;
+        }
+
+        .resume-frame iframe,
+        .resume-frame embed {
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            border: 0;
+        }
+
+        .resume-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .resume-actions a {
+            color: #5a4225;
+            font-weight: 700;
+        }
+
+        .parchment-style.tight {
+            padding: 28px 22px;
         }

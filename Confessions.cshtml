@@ -20,31 +20,32 @@
                 Body = body,
                 ScriptureReference = scripture
             });
-            message = "Confession saved through ASP.NET Razor and C#.";
+            message = "Individual confession saved through ASP.NET Razor and C#.";
         } else {
             message = "Please add a name, title, and at least 80 characters of testimony.";
         }
     }
 
     var entries = FaithEntryRepository.GetEntries("Confession");
-    var confessionHtml = "<p><em>Faith and logic are not opposing forces, but two sides of the same divine truth.</em></p><p>Through this project, each member explored how computational logic can reflect order, purpose, and spiritual growth.</p>";
-    confessionHtml += "<div class=\"form-panel\"><h3>Submit a Confession</h3>";
+    var groupHtml = "<span class=\"section-label\">Group</span><!-- PUT GROUP CONFESSION HERE --><p class=\"copy-slot\">Write the group confession here. This page is for the whole group, not individual members. Replace this box.</p>";
+    var individualHtml = "<span class=\"section-label\">Individual</span><!-- PUT INDIVIDUAL CONFESSIONS HERE --><p class=\"copy-slot\">Write each member&rsquo;s individual confession or reflection here. Keep this separate from the group page. Replace this box.</p>";
+    individualHtml += "<div class=\"form-panel\"><h3>Add an individual confession</h3>";
     if (message.Length > 0) {
-        confessionHtml += "<p class=\"" + (message.StartsWith("Please") ? "validation-summary" : "success-message") + "\">" + HttpUtility.HtmlEncode(message) + "</p>";
+        individualHtml += "<p class=\"" + (message.StartsWith("Please") ? "validation-summary" : "success-message") + "\">" + HttpUtility.HtmlEncode(message) + "</p>";
     }
-    confessionHtml += "<form method=\"post\" class=\"book-form\"><label>Name<input name=\"author\" required maxlength=\"80\"></label><label>Testimony title<input name=\"title\" required maxlength=\"100\"></label><label>Confession or testimony<textarea name=\"body\" required data-confession-text data-character-count=\"#confession-count\" data-minimum=\"80\"></textarea></label><p id=\"confession-count\" class=\"field-note\"></p><label>Scripture connection<input name=\"scripture\" maxlength=\"80\"></label><div class=\"preview-box\" data-confession-preview>Your testimonial preview will appear here as you type.</div><button class=\"button primary\" type=\"submit\">Save confession</button></form></div>";
+    individualHtml += "<form method=\"post\" class=\"book-form\"><label>Name<input name=\"author\" required maxlength=\"80\"></label><label>Testimony title<input name=\"title\" required maxlength=\"100\"></label><label>Individual confession<textarea name=\"body\" required data-confession-text data-character-count=\"#confession-count\" data-minimum=\"80\"></textarea></label><p id=\"confession-count\" class=\"field-note\"></p><label>Scripture connection<input name=\"scripture\" maxlength=\"80\"></label><div class=\"preview-box\" data-confession-preview>Your testimonial preview will appear here as you type.</div><button class=\"button primary\" type=\"submit\">Save individual confession</button></form></div>";
 
-    var listHtml = "<div class=\"toolbar\"><input type=\"search\" data-entry-search aria-label=\"Search confessions\" placeholder=\"Search confessions\"></div><div class=\"entry-list\">";
+    var listHtml = "<span class=\"section-label\">Individual</span><div class=\"toolbar\"><input type=\"search\" data-entry-search aria-label=\"Search individual confessions\" placeholder=\"Search individual confessions\"></div><div class=\"entry-list\">";
     foreach (var entry in entries) {
         listHtml += "<article class=\"entry-card\" data-entry-kind=\"" + HttpUtility.HtmlAttributeEncode(entry.Kind) + "\"><p class=\"entry-meta\">" + HttpUtility.HtmlEncode(entry.Author) + " - " + entry.CreatedAt.ToString("MMM d, yyyy") + "</p><h3>" + HttpUtility.HtmlEncode(entry.Title) + "</h3><p>" + HttpUtility.HtmlEncode(entry.Body) + "</p><blockquote>" + HttpUtility.HtmlEncode(entry.ScriptureReference) + "</blockquote></article>";
     }
     listHtml += "</div>";
 
     var panels = new List<dynamic> {
-        new { Style = "cover", Title = "Confessions", Subtitle = "Honest Testimony<br>and Growth", Footer = "Group 1", Kicker = "", Body = "" },
-        new { Style = "page", Title = "Individual Confessions", Subtitle = "", Footer = "", Kicker = "Redistributed from the original book", Body = confessionHtml },
-        new { Style = "page", Title = "Shared Testimonies", Subtitle = "", Footer = "", Kicker = "Saved by C#", Body = listHtml },
-        new { Style = "page", Title = "Confessional Focus", Subtitle = "", Footer = "", Kicker = "Meaning", Body = "<p>This section is for naming growth honestly: what was difficult, what became clearer, and how faith shaped the way the group worked.</p>" },
+        new { Style = "cover", Title = "Confessions", Subtitle = "Group and Individual", Footer = "Group 1", Kicker = "", Body = "" },
+        new { Style = "page", Title = "Group Confession", Subtitle = "", Footer = "", Kicker = "Group only", Body = groupHtml },
+        new { Style = "page", Title = "Individual", Subtitle = "", Footer = "", Kicker = "Members", Body = individualHtml },
+        new { Style = "page", Title = "Saved individual", Subtitle = "", Footer = "", Kicker = "C# storage", Body = listHtml },
         new { Style = "page", Title = "The End", Subtitle = "", Footer = "", Kicker = "Closing", Body = "<p class=\"centered\"><em>Honest testimony is part of learning to walk in truth.</em></p>" }
     };
 }

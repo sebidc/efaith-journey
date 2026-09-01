@@ -1,0 +1,33 @@
+Drop your files in these folders. Do not rename the surname files.
+
+PHOTOS (left side of each Developers spread)
+  Content/photos/ABASOLO.jpg
+  Content/photos/BAYAN.jpg
+  Content/photos/CRISOSTOMO.jpg
+  Content/photos/DELA-CRUZ.jpg
+  Content/photos/HERNANDEZ.jpg
+  Content/photos/LUCAS.jpg
+  Content/photos/MANUEL.jpg
+  Content/photos/PANGANIBAN.jpg
+  Content/photos/QUIAMBAO.jpg
+  Content/photos/RAMOS.jpg
+  Content/photos/ROQUE.jpg
+  Content/photos/TAPICERIA.jpg
+  Content/photos/VILLENA.jpg
+
+RESUMES (right side of each Developers spread)
+  Content/resumes/ABASOLO.pdf
+  Content/resumes/BAYAN.pdf
+  Content/resumes/CRISOSTOMO.pdf
+  Content/resumes/DELA-CRUZ.pdf
+  Content/resumes/HERNANDEZ.pdf
+  Content/resumes/LUCAS.pdf
+  Content/resumes/MANUEL.pdf
+  Content/resumes/PANGANIBAN.pdf
+  Content/resumes/QUIAMBAO.pdf
+  Content/resumes/RAMOS.pdf
+  Content/resumes/ROQUE.pdf
+  Content/resumes/TAPICERIA.pdf
+  Content/resumes/VILLENA.pdf
+
+.JPG is the default photo name. .PNG also works if you change the filename in developers.html / Developers.cshtml.
