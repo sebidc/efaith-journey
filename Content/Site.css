@@ -6,6 +6,11 @@
             user-select: none;
         }
 
+        html {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
 
         body {
             /* Ambient Dark Studio Background with Center Light Glow */
@@ -50,7 +55,7 @@
             padding: 6px 14px;
             border-radius: 25px;
             font-family: 'Cinzel', serif;
-            font-size: 0.72rem;
+            font-size: clamp(0.78rem, 2.1vw, 0.88rem);
             font-weight: 600;
             letter-spacing: 0.4px;
             cursor: pointer;
@@ -113,6 +118,8 @@
             width: min(440px, calc((100vw - 220px) / 2), calc((100vh - 170px) * 0.71));
             min-width: 210px;
             aspect-ratio: 22 / 31;
+            container-type: inline-size;
+            container-name: book;
             filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.8));
             /* Matches paper rotation speed to smoothly re-center spine */
             transition: transform 1.1s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -184,7 +191,7 @@
                 radial-gradient(circle at 40% 30%, #8d4a1d 0%, #4a220a 70%, #240d02 100%),
                 repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 4px);
             border-left: 14px solid #140701;
-            padding: 35px;
+            padding: clamp(14px, 8cqi, 35px);
             color: #e6c687;
             text-align: center;
         }
@@ -193,10 +200,10 @@
         .gold-frame {
             border: 2px solid #c9a45c;
             outline: 1px solid #c9a45c;
-            outline-offset: 6px;
+            outline-offset: clamp(3px, 1.4cqi, 6px);
             height: 100%;
             width: 100%;
-            padding: 30px 20px;
+            padding: clamp(12px, 7cqi, 30px) clamp(10px, 5cqi, 20px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -208,29 +215,31 @@
 
         .cover-title {
             font-family: 'Alex Brush', cursive;
-            font-size: 4.5rem;
+            font-size: clamp(1.7rem, 20cqi, 4.5rem);
             color: #f7e7c4;
             text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.9), 0 0 12px rgba(201, 164, 92, 0.4);
-            line-height: 1.1;
-            margin-top: 15px;
+            line-height: 1.05;
+            margin-top: clamp(4px, 3cqi, 15px);
+            max-width: 100%;
+            overflow-wrap: break-word;
         }
 
 
         .cover-subtitle {
             font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
+            font-size: clamp(0.62rem, 4.2cqi, 1.1rem);
             color: #d8b775;
-            line-height: 1.6;
-            letter-spacing: 1px;
+            line-height: 1.45;
+            letter-spacing: 0.04em;
         }
 
 
         .cover-group {
             font-family: 'Cinzel', serif;
-            font-size: 1.4rem;
+            font-size: clamp(0.85rem, 5.4cqi, 1.4rem);
             font-weight: 700;
             color: #f7e7c4;
-            letter-spacing: 2px;
+            letter-spacing: 0.08em;
         }
 
 
@@ -244,25 +253,36 @@
             background-size: 100% 100%, 30px 30px, 30px 30px;
             box-shadow: inset 18px 0 30px rgba(0,0,0,0.18), inset -5px 0 10px rgba(0,0,0,0.05);
             border-left: 1px solid #d1c2a5;
-            padding: 45px 35px;
+            padding: clamp(18px, 10cqi, 45px) clamp(14px, 8cqi, 35px);
             color: #3b2819;
+        }
+
+
+        .page-header p {
+            margin: 0 0 4px;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.68rem, 3.2cqi, 0.9rem);
+            letter-spacing: 0.04em;
+            text-align: center;
         }
 
 
         .page-header h2 {
             font-family: 'Alex Brush', cursive;
-            font-size: 3.4rem;
+            font-size: clamp(1.35rem, 11cqi, 3.4rem);
             color: #2b1a0e;
             text-align: center;
             font-weight: normal;
-            line-height: 1;
+            line-height: 1.05;
+            padding: 0 2px;
+            overflow-wrap: anywhere;
         }
 
 
         .page-body {
-            margin-top: 25px;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            margin-top: clamp(10px, 5cqi, 25px);
+            font-size: clamp(0.88rem, 4.6cqi, 1.12rem);
+            line-height: 1.55;
             color: #3d2d20;
             text-align: justify;
             overflow: auto;
@@ -315,7 +335,7 @@
             background: rgba(255, 252, 245, 0.95);
             color: #3b2819;
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 0.95rem;
+            font-size: clamp(0.9rem, 4.2cqi, 1rem);
             user-select: text;
         }
 
@@ -332,7 +352,7 @@
             color: #ffffff;
             cursor: pointer;
             font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
+            font-size: clamp(0.75rem, 3.6cqi, 0.85rem);
             font-weight: 700;
         }
 
@@ -348,7 +368,7 @@
         .entry-card h3 {
             margin: 0 0 6px;
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
+            font-size: clamp(0.88rem, 4.2cqi, 1rem);
         }
 
         .toolbar {
@@ -373,7 +393,7 @@
         .validation-summary,
         .success-message {
             margin: 0;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 3.8cqi, 0.95rem);
             text-align: left;
         }
 
@@ -417,7 +437,7 @@
             left: 50%;
             transform: translate(-50%, -50%) rotate(-25deg);
             font-family: 'Alex Brush', cursive;
-            font-size: 7.5rem;
+            font-size: clamp(3rem, 28cqi, 7.5rem);
             color: rgba(180, 150, 110, 0.12);
             pointer-events: none;
             white-space: nowrap;
@@ -471,7 +491,7 @@
             text-align: center;
             padding: 12px;
             font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
+            font-size: clamp(0.68rem, 2.4vw, 0.85rem);
             border-top: 1px solid rgba(212, 195, 163, 0.15);
             z-index: 100;
             letter-spacing: 1px;
@@ -484,12 +504,81 @@
             }
         }
         @media (max-width: 850px) {
-            .book {
-                width: min(360px, calc((100vw - 95px) / 2), calc((100vh - 165px) * 0.71));
-                min-width: 155px;
+            .top-nav {
+                padding: 8px 10px;
+                gap: 6px;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
-            #prev-btn { left: 15px; }
-            #next-btn { right: 15px; }
+
+            .nav-pill {
+                font-size: 0.78rem;
+                min-height: 34px;
+                padding: 5px 10px;
+                flex: 0 0 auto;
+            }
+
+            .lace-border {
+                display: none;
+            }
+
+            .book {
+                width: min(360px, calc((100vw - 12px) / 2), calc((100vh - 118px) * 0.71));
+                min-width: 128px;
+            }
+
+            .cover-style {
+                border-left-width: 8px;
+            }
+
+            #prev-btn,
+            #next-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 1.55rem;
+            }
+
+            #prev-btn { left: 2px; }
+            #next-btn { right: 2px; }
+
+            .site-footer {
+                font-size: 0.72rem;
+                padding: 7px 10px;
+                letter-spacing: 0.4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book {
+                width: min(320px, calc((100vw - 8px) / 2), calc((100vh - 112px) * 0.71));
+                min-width: 118px;
+            }
+
+            .cover-style {
+                border-left-width: 6px;
+            }
+
+            .cover-title {
+                font-size: clamp(1.35rem, 18cqi, 3.2rem);
+            }
+
+            .page-header h2 {
+                font-size: clamp(1.15rem, 10cqi, 2.2rem);
+            }
+
+            .page-body {
+                font-size: clamp(0.82rem, 4.6cqi, 1.05rem);
+                line-height: 1.45;
+            }
+
+            #prev-btn,
+            #next-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 1.4rem;
+            }
         }
 
         .copy-slot {
@@ -507,13 +596,13 @@
             border: 1px solid #c9b38c;
             border-radius: 999px;
             font-family: 'Cinzel', serif;
-            font-size: 0.72rem;
+            font-size: clamp(0.68rem, 3.2cqi, 0.78rem);
             letter-spacing: 0.6px;
             background: rgba(255, 251, 241, 0.8);
         }
 
         .page-header.compact h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.35rem, 9.5cqi, 2.2rem);
         }
 
         .member-card,
@@ -542,7 +631,7 @@
             align-items: center;
             justify-content: center;
             font-family: 'Cinzel', serif;
-            font-size: 2rem;
+            font-size: clamp(1.3rem, 8cqi, 2rem);
             color: #5a4225;
         }
 
@@ -558,14 +647,14 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.55;
+            font-size: clamp(0.85rem, 4.2cqi, 0.98rem);
+            line-height: 1.45;
             text-align: left;
         }
 
         .member-facts strong {
             font-family: 'Cinzel', serif;
-            font-size: 0.78rem;
+            font-size: clamp(0.68rem, 3.2cqi, 0.78rem);
         }
 
         .resume-frame {
@@ -597,5 +686,5 @@
         }
 
         .parchment-style.tight {
-            padding: 28px 22px;
+            padding: clamp(14px, 6.5cqi, 28px) clamp(12px, 5cqi, 22px);
         }

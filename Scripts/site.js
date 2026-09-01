@@ -82,6 +82,34 @@ document.addEventListener("keydown", (event) => {
 
 window.addEventListener("resize", updateBookState);
 
+const stage = document.querySelector(".main-stage");
+let touchStartX = 0;
+let touchStartY = 0;
+
+if (stage) {
+    stage.addEventListener("touchstart", (event) => {
+        const touch = event.changedTouches[0];
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+    }, { passive: true });
+
+    stage.addEventListener("touchend", (event) => {
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+
+        if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.25) {
+            return;
+        }
+
+        if (deltaX < 0) {
+            goNextPage();
+        } else {
+            goPrevPage();
+        }
+    }, { passive: true });
+}
+
 document.querySelectorAll("[data-character-count]").forEach((field) => {
     const target = document.querySelector(field.getAttribute("data-character-count"));
     const minimum = Number(field.getAttribute("data-minimum") || 0);
