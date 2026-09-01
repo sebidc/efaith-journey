@@ -180,7 +180,17 @@
             }
           },
           {
-            "id": "412632ca0479b15e",
+            "id": "a5c5b8552fa05176",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          },
+          {
+            "id": "9163936956df110b",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -188,19 +198,9 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "a5c5b8552fa05176",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "advanced-tables-toolbar"
-            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -231,7 +231,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "a5c5b8552fa05176",
   "lastOpenFiles": [
     "HOME.md",
     "Notes/Notes.md",
