@@ -54,6 +54,12 @@ body {
         url("../../assets/images/dawn-sky.jpg") center top / cover fixed;
     color: var(--ink);
     overflow-x: hidden;
+    opacity: 1;
+    transition: opacity 320ms ease;
+}
+
+body.is-entering {
+    opacity: 0;
 }
 
 body::before {
@@ -142,7 +148,7 @@ button {
     opacity: 0;
     backdrop-filter: blur(0);
     -webkit-backdrop-filter: blur(0);
-    transition: opacity 260ms ease, backdrop-filter 260ms ease, -webkit-backdrop-filter 260ms ease;
+    transition: opacity 340ms cubic-bezier(0.22, 0.72, 0.24, 1), backdrop-filter 340ms ease, -webkit-backdrop-filter 340ms ease;
 }
 
 body.is-leaving .page-transition {

@@ -22,13 +22,13 @@
             ];
             let currentIndex = 0;
 
-            function animateTurn() {
-                book.classList.remove("is-turning");
+            function animateTurn(direction) {
+                book.classList.remove("is-turning", "is-turning-forward", "is-turning-back");
                 void book.offsetWidth;
-                book.classList.add("is-turning");
+                book.classList.add("is-turning", direction < 0 ? "is-turning-back" : "is-turning-forward");
             }
 
-            async function openPage(index, shouldAnimate) {
+            async function openPage(index, shouldAnimate, direction = 1) {
                 currentIndex = (index + pages.length) % pages.length;
                 const page = pages[currentIndex];
                 book.classList.toggle("is-cover-page", Boolean(page.type));
@@ -61,12 +61,12 @@
                 `;
                 count.textContent = `${currentIndex + 1} / ${pages.length}`;
                 if (shouldAnimate) {
-                    animateTurn();
+                    animateTurn(direction);
                 }
             }
 
-            prev.addEventListener("click", () => openPage(currentIndex - 1, true));
-            next.addEventListener("click", () => openPage(currentIndex + 1, true));
+            prev.addEventListener("click", () => openPage(currentIndex - 1, true, -1));
+            next.addEventListener("click", () => openPage(currentIndex + 1, true, 1));
 
             openPage(0, false);
         } catch {

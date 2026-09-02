@@ -1,6 +1,16 @@
 (function () {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    if (!reduceMotion) {
+        document.body.classList.add("is-entering");
+        window.requestAnimationFrame(() => {
+            document.body.classList.remove("is-entering");
+        });
+        window.addEventListener("pageshow", () => {
+            document.body.classList.remove("is-leaving", "is-entering");
+        });
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         if (document.querySelector(".site-frame")) {
             return;
@@ -32,6 +42,6 @@
         document.body.classList.add("is-leaving");
         window.setTimeout(() => {
             window.location.href = link.href;
-        }, 260);
+        }, 340);
     });
 })();
