@@ -2,48 +2,68 @@
 @using System.Web
 @{
     Layout = "~/_Shared/_Layout.cshtml";
-    Page.Title = "e-Faith Journey | Faith Insights";
-    Page.ActiveSection = "Faith Insights";
+    Page.Title = "e-Faith Journey | Key Takeaways";
+    Page.ActiveSection = "Key Takeaways";
 
     var message = "";
     if (IsPost) {
         var author = (Request.Form["author"] ?? "").Trim();
-        var title = (Request.Form["title"] ?? "").Trim();
-        var body = (Request.Form["body"] ?? "").Trim();
-        var scripture = (Request.Form["scripture"] ?? "").Trim();
+        var primaryTakeaway = (Request.Form["primaryTakeaway"] ?? "").Trim();
+        var applicationPlan = (Request.Form["applicationPlan"] ?? "").Trim();
 
-        if (author.Length > 0 && title.Length > 0 && body.Length >= 50) {
+        if (author.Length > 0 && primaryTakeaway.Length > 0 && applicationPlan.Length > 0) {
             FaithEntryRepository.AddEntry(new FaithEntry {
-                Kind = "Faith Insight",
+                Kind = "Key Takeaway",
                 Author = author,
-                Title = title,
-                Body = body,
-                ScriptureReference = scripture
+                Title = "Final Reflection Check-In",
+                Body = "Takeaway: " + primaryTakeaway + " | Application: " + applicationPlan
             });
-            message = "Faith insight saved through ASP.NET Razor and C#.";
+            message = "Reflection saved successfully through ASP.NET Razor and C#.";
         } else {
-            message = "Please add a name, title, and at least 50 characters of insight.";
+            message = "Please fill in your name and answer all reflection questions.";
         }
     }
 
-    var entries = FaithEntryRepository.GetEntries("Faith Insight");
-    var insightForm = "<div class=\"form-panel\"><h3>Add a Faith Insight</h3>";
-    if (message.Length > 0) {
-        insightForm += "<p class=\"" + (message.StartsWith("Please") ? "validation-summary" : "success-message") + "\">" + HttpUtility.HtmlEncode(message) + "</p>";
-    }
-    insightForm += "<form method=\"post\" class=\"book-form\"><label>Name or group<input name=\"author\" required maxlength=\"80\"></label><label>Insight title<input name=\"title\" required maxlength=\"100\"></label><label>Shared faith insight<textarea name=\"body\" required data-character-count=\"#insight-count\" data-minimum=\"50\"></textarea></label><p id=\"insight-count\" class=\"field-note\"></p><label>Scripture connection<input name=\"scripture\" maxlength=\"80\"></label><button class=\"button primary\" type=\"submit\">Save insight</button></form></div>";
+    var entries = FaithEntryRepository.GetEntries("Key Takeaway");
 
-    var listHtml = "<div class=\"toolbar\"><input type=\"search\" data-entry-search aria-label=\"Search insights\" placeholder=\"Search insights\"></div><div class=\"entry-list\">";
+    var reflectionForm = "<div class=\"form-panel\"><h3>Final Reflection Check-In</h3>";
+    if (message.Length > 0) {
+        reflectionForm += "<p class=\"" + (message.StartsWith("Please") ? "validation-summary" : "success-message") + "\">" + HttpUtility.HtmlEncode(message) + "</p>";
+    }
+    reflectionForm += "<p>Select the statements that best reflect your experience and takeaway after exploring our website.</p>" +
+        "<form method=\"post\" class=\"book-form\">" +
+        "<label>Name or Group<input name=\"author\" required maxlength=\"80\"></label>" +
+        
+        "<div class=\"question-group\">" +
+            "<p><strong>1. What was your primary takeaway from our theology and reflection content?</strong></p>" +
+            "<label><input type=\"radio\" name=\"primaryTakeaway\" value=\"I gained a deeper understanding of key theological principles and how faith aligns with real-life challenges.\" required> A: I gained a deeper understanding of key theological principles and how faith aligns with real-life challenges.</label>" +
+            "<label><input type=\"radio\" name=\"primaryTakeaway\" value=\"I realized the importance of personal and group reflections in strengthening community and moral values.\"> B: I realized the importance of personal and group reflections in strengthening community and moral values.</label>" +
+            "<label><input type=\"radio\" name=\"primaryTakeaway\" value=\"I learned how active participation, empathy, and social responsibility stem from grounded spiritual beliefs.\"> C: I learned how active participation, empathy, and social responsibility stem from grounded spiritual beliefs.</label>" +
+            "<label><input type=\"radio\" name=\"primaryTakeaway\" value=\"I gained a clearer view on how individual purpose connects to a broader sense of service and duty.\"> D: I gained a clearer view on how individual purpose connects to a broader sense of service and duty.</label>" +
+        "</div>" +
+
+        "<div class=\"question-group\">" +
+            "<p><strong>2. How do you plan to apply these learnings in your daily life?</strong></p>" +
+            "<label><input type=\"radio\" name=\"applicationPlan\" value=\"By actively engaging in community outreach, advocacy, or service initiatives.\" required> A: By actively engaging in community outreach, advocacy, or service initiatives.</label>" +
+            "<label><input type=\"radio\" name=\"applicationPlan\" value=\"By practicing mindful reflection, empathy, and better communication in my daily relationships.\"> B: By practicing mindful reflection, empathy, and better communication in my daily relationships.</label>" +
+            "<label><input type=\"radio\" name=\"applicationPlan\" value=\"By aligning my personal and professional goals with strong ethical and spiritual principles.\"> C: By aligning my personal and professional goals with strong ethical and spiritual principles.</label>" +
+            "<label><input type=\"radio\" name=\"applicationPlan\" value=\"By continuously seeking knowledge and advocating for fair, compassionate treatment of others.\"> D: By continuously seeking knowledge and advocating for fair, compassionate treatment of others.</label>" +
+        "</div>" +
+
+        "<button class=\"button primary\" type=\"submit\">Submit Reflection</button>" +
+        "</form></div>";
+
+    var listHtml = "<div class=\"toolbar\"><input type=\"search\" data-entry-search aria-label=\"Search reflections\" placeholder=\"Search reflections\"></div><div class=\"entry-list\">";
     foreach (var entry in entries) {
-        listHtml += "<article class=\"entry-card\" data-entry-kind=\"" + HttpUtility.HtmlAttributeEncode(entry.Kind) + "\"><p class=\"entry-meta\">" + HttpUtility.HtmlEncode(entry.Author) + " - " + entry.CreatedAt.ToString("MMM d, yyyy") + "</p><h3>" + HttpUtility.HtmlEncode(entry.Title) + "</h3><p>" + HttpUtility.HtmlEncode(entry.Body) + "</p><blockquote>" + HttpUtility.HtmlEncode(entry.ScriptureReference) + "</blockquote></article>";
+        listHtml += "<article class=\"entry-card\" data-entry-kind=\"" + HttpUtility.HtmlAttributeEncode(entry.Kind) + "\"><p class=\"entry-meta\">" + HttpUtility.HtmlEncode(entry.Author) + " - " + entry.CreatedAt.ToString("MMM d, yyyy") + "</p><h3>" + HttpUtility.HtmlEncode(entry.Title) + "</h3><p>" + HttpUtility.HtmlEncode(entry.Body) + "</p></article>";
     }
     listHtml += "</div>";
 
     var panels = new List<dynamic> {
-        new { Style = "cover", Title = "Faith<br>Insights", Subtitle = "Wisdom and<br>Shared Experience", Footer = "Group 1", Kicker = "", Body = "" },
-        new { Style = "page", Title = "Insights", Subtitle = "", Footer = "", Kicker = "Shared wisdom", Body = "<p class=\"copy-slot\">Write the group&rsquo;s original faith insights here. Replace this box. The Final Prayer now lives on the Prayer page. Member profiles now live on Developers.</p>" },
+        new { Style = "cover", Title = "Key<br>Takeaways", Subtitle = "Final Reflection<br>& Application", Footer = "Group 1", Kicker = "", Body = "" },
+        new { Style = "page", Title = "Reflection", Subtitle = "", Footer = "", Kicker = "Shared Experience", Body = "<p class=\"copy-slot\">Reflect on your journey across our site and share your final insights below.</p>" },
         new { Style = "page", Title = "Also in this book", Subtitle = "", Footer = "", Kicker = "Where to go next", Body = "<ul><li><a href=\"Prayer.cshtml\">Final Prayer or Vow</a></li><li><a href=\"Developers.cshtml\">Developers&rsquo; Information</a></li></ul>" },
-        new { Style = "page", Title = "Interactive Insights", Subtitle = "", Footer = "", Kicker = "Saved by C#", Body = insightForm + listHtml },
+        new { Style = "page", Title = "Interactive Reflections", Subtitle = "", Footer = "", Kicker = "Saved by C#", Body = reflectionForm + listHtml },
         new { Style = "page", Title = "The End", Subtitle = "", Footer = "", Kicker = "Closing", Body = "<p class=\"centered\"><em>May every insight become wisdom in action.</em></p>" }
     };
 }
