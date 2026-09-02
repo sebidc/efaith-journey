@@ -2,7 +2,7 @@
     overflow: hidden;
     border-bottom-left-radius: 34px;
     border-bottom-right-radius: 34px;
-    padding-top: 34px;
+    padding: 22px 24px 80px;
     background:
         linear-gradient(180deg, rgba(247, 245, 239, 0.9), rgba(232, 218, 194, 0.68)),
         url("../../assets/images/dawn-sky.jpg") center / cover;
@@ -63,7 +63,7 @@
     padding: 11px 20px;
     border: 0;
     border-radius: 999px;
-    background: linear-gradient(135deg, rgba(17, 17, 15, 0.5), rgba(255, 255, 255, 0.12));
+    background: linear-gradient(135deg, rgba(17, 17, 15, 0.46), rgba(255, 255, 255, 0.16));
     color: #fff;
     text-decoration: none;
     font-size: 0.72rem;
@@ -78,16 +78,16 @@
 
 .hero-chrome .glass-stack a {
     min-height: 38px;
-    padding: 12px 13px;
+    padding: 12px 17px;
     border: 0;
-    border-radius: 0;
-    background: transparent;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(17, 17, 15, 0.38), rgba(255, 255, 255, 0.16));
     color: #fff;
-    box-shadow: none;
+    box-shadow: 0 10px 28px rgba(17, 17, 15, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.3);
     text-decoration: none;
     text-shadow: 0 2px 18px rgba(17, 17, 15, 0.46);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(18px) saturate(1.35);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35);
 }
 
 .hero-chrome .glass-stack {
@@ -97,8 +97,8 @@
 
 .hero-chrome .glass-stack a:hover,
 .hero-chrome .glass-stack a[aria-current="page"] {
-    background: transparent;
-    color: var(--gold);
+    background: linear-gradient(135deg, rgba(216, 181, 109, 0.46), rgba(255, 255, 255, 0.18));
+    color: #fff;
 }
 
 .hero-scene {
@@ -233,6 +233,9 @@
     color: var(--ink);
     text-align: left;
     border-radius: 18px;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1.35;
 }
 
 .mood-result {
@@ -263,10 +266,11 @@
 
 .book-stage {
     display: grid;
-    grid-template-columns: minmax(260px, 360px) minmax(0, 880px);
-    gap: clamp(24px, 5vw, 64px);
+    grid-template-columns: minmax(0, 1020px);
+    gap: 0;
     align-items: stretch;
-    width: min(1180px, calc(100vw - 48px));
+    justify-content: center;
+    width: min(1100px, calc(100vw - 48px));
     margin: 0 auto;
 }
 
@@ -309,8 +313,14 @@
 
 .book-reader {
     min-height: 620px;
-    padding: clamp(18px, 3vw, 30px);
+    padding: clamp(20px, 3vw, 34px);
     min-width: 0;
+    border-radius: 26px;
+    background:
+        linear-gradient(90deg, rgba(17, 17, 15, 0.5), transparent 8%, transparent 92%, rgba(17, 17, 15, 0.36)),
+        radial-gradient(circle at 28% 18%, rgba(134, 82, 45, 0.9), rgba(58, 33, 20, 0.96) 56%, rgba(26, 14, 9, 0.98));
+    border: 1px solid rgba(216, 181, 109, 0.38);
+    box-shadow: var(--shadow-soft), inset 0 0 0 8px rgba(17, 17, 15, 0.14);
 }
 
 .flip-book {
@@ -320,6 +330,12 @@
     gap: 0;
     perspective: 1600px;
     min-height: 520px;
+    padding: 18px;
+    border-radius: 20px;
+    background:
+        linear-gradient(90deg, rgba(216, 181, 109, 0.22), transparent 48%, rgba(17, 17, 15, 0.18) 50%, transparent 52%, rgba(216, 181, 109, 0.2)),
+        rgba(26, 14, 9, 0.38);
+    box-shadow: inset 0 0 48px rgba(0, 0, 0, 0.22);
 }
 
 .book-spread {
@@ -327,10 +343,11 @@
     padding: clamp(20px, 4vw, 42px);
     border-radius: 16px;
     background:
+        radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.34), transparent 32%),
         linear-gradient(90deg, rgba(58, 33, 20, 0.12), transparent 7%, transparent 93%, rgba(58, 33, 20, 0.1)),
-        #fbf5e7;
+        #efe0bf;
     color: #2d2018;
-    box-shadow: inset 0 0 0 1px rgba(90, 58, 34, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(90, 58, 34, 0.16), inset 0 0 28px rgba(90, 58, 34, 0.12);
     min-width: 0;
 }
 
@@ -338,7 +355,7 @@
     border-radius: 16px 0 0 16px;
     background:
         linear-gradient(90deg, rgba(58, 33, 20, 0.16), transparent 12%),
-        #f4e8cf;
+        #e6d2aa;
 }
 
 .book-page-right {
@@ -360,11 +377,51 @@
     width: 50%;
     height: 100%;
     border-radius: 0 16px 16px 0;
-    background: #fbf5e7;
+    background: #efe0bf;
     transform-origin: left center;
     pointer-events: none;
     opacity: 0;
     box-shadow: var(--shadow-tight);
+}
+
+.flip-book.is-cover-page {
+    grid-template-columns: 1fr;
+}
+
+.flip-book.is-cover-page .book-page-left {
+    display: none;
+}
+
+.flip-book.is-cover-page .book-page-right {
+    border-radius: 18px;
+    min-height: 520px;
+    background:
+        linear-gradient(90deg, rgba(17, 17, 15, 0.52), transparent 14%),
+        radial-gradient(circle at 28% 18%, #7a4a29, #3a2114 54%, #1a0e09);
+    color: var(--sand);
+    box-shadow: inset 12px 0 32px rgba(0, 0, 0, 0.44), inset 0 0 0 1px rgba(216, 181, 109, 0.34);
+}
+
+.book-cover-page {
+    display: grid;
+    align-content: center;
+    min-height: 420px;
+}
+
+.book-cover-page h1 {
+    color: var(--sand);
+    font-size: clamp(2.8rem, 8vw, 6rem);
+}
+
+.book-cover-page p:not(.cover-mark) {
+    max-width: 520px;
+    margin-top: 24px;
+    color: rgba(232, 218, 194, 0.82);
+}
+
+.book-cover-page.back {
+    text-align: right;
+    justify-items: end;
 }
 
 .flip-book.is-turning .turning-page {
@@ -408,14 +465,14 @@
 
 .resume-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
     min-width: 0;
 }
 
 .resume-card {
-    min-height: 230px;
-    padding: 0;
+    min-height: 390px;
+    padding: 14px;
     border-radius: 18px;
     overflow: hidden;
     background: rgba(247, 245, 239, 0.86);
@@ -433,21 +490,22 @@
 
 .resume-card img {
     width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
+    aspect-ratio: 3 / 4.2;
+    object-fit: contain;
     background: #fff;
+    border-radius: 12px;
 }
 
 .resume-card span {
     display: block;
-    padding: 12px 14px;
+    padding: 0 2px 12px;
     color: var(--ink);
     font-weight: 800;
 }
 
 .developer-console {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
     gap: 22px;
     align-items: start;
 }
@@ -552,22 +610,32 @@
 
 .takeaway-form {
     display: grid;
-    gap: 20px;
+    gap: 18px;
 }
 
 .question-card {
     display: grid;
-    gap: 12px;
-    padding: 18px;
+    gap: 14px;
+    padding: clamp(18px, 3vw, 26px);
     border-radius: 18px;
-    background: rgba(247, 245, 239, 0.64);
+    background: rgba(247, 245, 239, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.48);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.question-card legend {
+    margin-bottom: 12px;
+    line-height: 1.35;
 }
 
 .choice-label {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 10px;
-    align-items: start;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.34);
     line-height: 1.45;
 }
 
@@ -602,8 +670,8 @@
 .verse-card {
     width: min(780px, calc(100vw - 48px));
     padding: clamp(28px, 6vw, 64px);
-    color: #fff;
-    background: linear-gradient(145deg, rgba(17, 17, 15, 0.64), rgba(17, 17, 15, 0.28));
+    color: var(--ink);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.62), rgba(247, 245, 239, 0.34));
 }
 
 .verse-card h1 {
@@ -616,7 +684,7 @@
 }
 
 .verse-meta {
-    color: var(--sand);
+    color: rgba(17, 17, 15, 0.62);
 }
 
 @media (max-width: 900px) {

@@ -33,8 +33,8 @@
                 button.className = "resume-card";
                 button.setAttribute("aria-pressed", "false");
                 button.innerHTML = `
-                    <img src="${escapeHtml(member.resumePreview)}" alt="${escapeHtml(member.label)} resume thumbnail">
                     <span>${escapeHtml(member.label)}</span>
+                    <img src="${escapeHtml(member.resumePreview)}" alt="${escapeHtml(member.label)} resume thumbnail">
                 `;
                 button.addEventListener("click", () => openMember(member, button));
                 grid.append(button);

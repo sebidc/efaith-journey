@@ -4,22 +4,25 @@
     document.addEventListener("DOMContentLoaded", async () => {
         const content = document.querySelector("[data-reflection-content]");
         const book = document.querySelector("[data-flip-book]");
-        const cover = document.querySelector("[data-book-cover]");
         const prev = document.querySelector("[data-book-prev]");
         const next = document.querySelector("[data-book-next]");
         const count = document.querySelector("[data-book-count]");
         const leftPage = document.querySelector(".book-page-left");
 
-        if (!content || !book || !cover || !prev || !next || !count || !leftPage) {
+        if (!content || !book || !prev || !next || !count || !leftPage) {
             return;
         }
 
         try {
-            const pages = await loadJson("content/data/reflections.json");
+            const reflectionPages = await loadJson("content/data/reflections.json");
+            const pages = [
+                { type: "front-cover", label: "Front Cover" },
+                ...reflectionPages,
+                { type: "back-cover", label: "Back Cover" }
+            ];
             let currentIndex = 0;
 
             function animateTurn() {
-                cover.classList.add("is-open");
                 book.classList.remove("is-turning");
                 void book.offsetWidth;
                 book.classList.add("is-turning");
@@ -28,8 +31,29 @@
             async function openPage(index, shouldAnimate) {
                 currentIndex = (index + pages.length) % pages.length;
                 const page = pages[currentIndex];
-                const markdown = await loadMarkdown(page.file);
-                content.innerHTML = markdownToHtml(markdown);
+                book.classList.toggle("is-cover-page", Boolean(page.type));
+
+                if (page.type === "front-cover") {
+                    content.innerHTML = `
+                        <div class="book-cover-page">
+                            <p class="cover-mark">e-Faith Journey</p>
+                            <h1>Reflections</h1>
+                            <p>Open the book to read the group's reflection, individual journals, final prayer, and shared takeaways.</p>
+                        </div>
+                    `;
+                } else if (page.type === "back-cover") {
+                    content.innerHTML = `
+                        <div class="book-cover-page back">
+                            <p class="cover-mark">Amen</p>
+                            <h1>Final Page</h1>
+                            <p>Close the book with gratitude for faith, friendship, and the journey we shared.</p>
+                        </div>
+                    `;
+                } else {
+                    const markdown = await loadMarkdown(page.file);
+                    content.innerHTML = markdownToHtml(markdown);
+                }
+
                 leftPage.innerHTML = `
                     <p class="kicker">e-Faith Journey</p>
                     <h1>${escapeHtml(page.label)}</h1>
@@ -41,7 +65,6 @@
                 }
             }
 
-            cover.addEventListener("click", () => openPage(currentIndex, true));
             prev.addEventListener("click", () => openPage(currentIndex - 1, true));
             next.addEventListener("click", () => openPage(currentIndex + 1, true));
 
