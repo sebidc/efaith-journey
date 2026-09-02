@@ -1,16 +1,19 @@
 .home-hero {
+    position: relative;
+    display: block;
+    min-height: auto;
     overflow: hidden;
     border-bottom-left-radius: 34px;
     border-bottom-right-radius: 34px;
-    padding: 22px 24px 80px;
+    padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 24px) 28px;
     background:
-        linear-gradient(180deg, rgba(247, 245, 239, 0.9), rgba(232, 218, 194, 0.68)),
+        linear-gradient(180deg, rgba(247, 245, 239, 0.64), rgba(232, 218, 194, 0.12) 68%, rgba(247, 245, 239, 0)),
         url("../../assets/images/dawn-sky.jpg") center / cover;
 }
 
 .shared-header {
-    min-height: 58vh;
-    padding-bottom: 34px;
+    min-height: auto;
+    padding-bottom: 26px;
 }
 
 .hero-card-shell {
@@ -24,6 +27,14 @@
     border-radius: 30px;
     background: transparent;
     box-shadow: var(--shadow-soft);
+}
+
+.home-hero .scroll-indicator {
+    bottom: 18px;
+    z-index: 5;
+    min-height: 52px;
+    background: linear-gradient(135deg, rgba(17, 17, 15, 0.7), rgba(17, 17, 15, 0.42));
+    box-shadow: 0 18px 46px rgba(17, 17, 15, 0.18);
 }
 
 .hero-chrome {
@@ -109,10 +120,12 @@
     background:
         linear-gradient(180deg, rgba(185, 199, 214, 0.18), rgba(240, 182, 127, 0.16)),
         url("../../assets/images/dawn-sky.jpg") center / cover;
+    mask-image: linear-gradient(180deg, #000 0%, #000 84%, rgba(0, 0, 0, 0.82) 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 84%, rgba(0, 0, 0, 0.82) 92%, transparent 100%);
 }
 
 .shared-header .hero-scene {
-    min-height: 360px;
+    min-height: clamp(300px, 34vw, 420px);
 }
 
 .hero-cross {
@@ -148,7 +161,7 @@
     inset: 0;
     background:
         radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.16), transparent 28%),
-        linear-gradient(180deg, rgba(17, 17, 15, 0.04), rgba(17, 17, 15, 0.36));
+        linear-gradient(180deg, rgba(17, 17, 15, 0.04), rgba(17, 17, 15, 0.18) 62%, rgba(247, 245, 239, 0.76) 100%);
 }
 
 .hero-scene-copy {
@@ -176,6 +189,37 @@
 .mood-shell {
     display: grid;
     gap: 22px;
+}
+
+body[data-page="home"] #mood-preview,
+.developers-board {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+body[data-page="home"] #mood-preview {
+    padding-top: clamp(34px, 5vw, 64px);
+}
+
+.developers-board {
+    padding-top: clamp(38px, 5vw, 72px);
+}
+
+body[data-page="home"] #mood-preview .section-heading,
+.developers-board .section-heading {
+    position: static;
+    width: min(760px, 100%);
+}
+
+body[data-page="home"] #mood-preview .glass-panel,
+.developers-board .developer-console {
+    width: 100%;
+}
+
+body[data-page="home"] #mood-preview .section-heading h2,
+.developers-board .section-heading h2 {
+    font-size: clamp(2.7rem, 7vw, 5.6rem);
 }
 
 @media (min-width: 901px) {
