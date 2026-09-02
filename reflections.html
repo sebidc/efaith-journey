@@ -4,90 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Faith Journey | Reflections</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Content/Site.css">
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/components.css">
+    <link rel="stylesheet" href="src/css/pages.css">
 </head>
-<body>
-<div class="app-viewport">
-    <nav class="top-nav" aria-label="Primary navigation">
-        <a class="nav-pill" href="index.html">Home</a>
-        <a class="nav-pill active" href="reflections.html" aria-current="page">Reflections</a>
-        <a class="nav-pill" href="confessions.html">Confessions</a>
-        <a class="nav-pill" href="faith-insights.html">Faith Insights</a>
-        <a class="nav-pill" href="prayer.html">Prayer</a>
-        <a class="nav-pill" href="developers.html">Developers</a>
-    </nav>
+<body data-page="reflections">
+    <div class="page-transition" aria-hidden="true"></div>
 
-    <main class="main-stage">
-        <div class="lace-border lace-left"></div>
-        <button id="prev-btn" class="book-button" type="button" aria-label="Previous book page"><span aria-hidden="true">&#8249;</span></button>
-        <section id="book" class="book" aria-label="Reflections book">
-            <article class="paper">
-                <div class="front"><div class="front-content cover-style"><div class="gold-frame"><div class="cover-title">Reflections</div><div class="cover-subtitle">Group, then Individual</div><div class="cover-group">Group 1</div></div></div></div>
-                <div class="back">
-                    <div class="back-content parchment-style">
-                        <div class="watermark">Faith</div>
-                        <div class="page-header"><p>Group only</p><h2>Group Reflection</h2></div>
-                        <div class="page-body">
-                            <span class="section-label">Group</span>
-                            <!-- PUT GROUP REFLECTION HERE -->
-                            <p class="copy-slot">Write the group reflection here. Replace this box. Do not mix individual voices on this page.</p>
-                        </div>
+    <main>
+        <section class="hero home-hero shared-header">
+            <div class="hero-card-shell">
+                <div class="hero-chrome">
+                    <nav class="toc glass-stack" aria-label="Table of contents">
+                        <a href="index.html">HOME</a>
+                        <a href="reflections.html" aria-current="page">REFLECTIONS</a>
+                        <a href="mood-checker.html">MOOD CHECKER</a>
+                        <a href="key-takeaways.html">KEY TAKEAWAYS</a>
+                        <a href="daily-verse.html">DAILY BIBLE VERSE</a>
+                        <a href="developers.html">DEVELOPERS</a>
+                    </nav>
+                    <span class="hero-monogram" aria-hidden="true">eF</span>
+                    <a class="repo-pill" href="https://github.com/sebidc/efaith-journey" target="_blank" rel="noopener">GITHUB REPO</a>
+                </div>
+                <div class="hero-scene">
+                    <img class="hero-cross" src="assets/images/vineyard-cross.jpg" alt="" aria-hidden="true">
+                    <div class="hero-scene-copy">
+                        <p class="kicker">Faith Journal</p>
+                        <h1>Reflections</h1>
+                        <p>Open the Bible-styled book and turn through the group's reflections.</p>
                     </div>
                 </div>
-            </article>
-            <article class="paper">
-                <div class="front">
-                    <div class="front-content parchment-style">
-                        <div class="watermark">Faith</div>
-                        <div class="page-header"><p>Members</p><h2>Individual</h2></div>
-                        <div class="page-body">
-                            <span class="section-label">Individual</span>
-                            <!-- PUT INDIVIDUAL REFLECTIONS HERE -->
-                            <p class="copy-slot">Write each member&rsquo;s individual reflection here. Keep this separate from the group page. Replace this box.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="back-content parchment-style">
-                        <div class="watermark">Faith</div>
-                        <div class="page-header"><p>Questions for deeper thought</p><h2>Guide</h2></div>
-                        <div class="page-body">
-                            <ul>
-                                <li>Where did this project require humility?</li>
-                                <li>How did code reveal order, purpose, or service?</li>
-                                <li>What did the group learn about responsibility?</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="paper">
-                <div class="front">
-                    <div class="front-content parchment-style">
-                        <div class="watermark">Faith</div>
-                        <div class="page-header"><p>Closing</p><h2>The End</h2></div>
-                        <div class="page-body centered"><p><em>Reflection becomes stronger when it leads to patience, service, and shared truth.</em></p></div>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="back-content cover-style">
-                        <div class="gold-frame">
-                            <div class="cover-title">Reflections</div>
-                            <div class="cover-subtitle">The Sacred Truth</div>
-                            <div class="cover-group">Group 1</div>
-                        </div>
-                    </div>
-                </div>
-            </article>
+            </div>
         </section>
-        <button id="next-btn" class="book-button" type="button" aria-label="Next book page"><span aria-hidden="true">&#8250;</span></button>
-        <div class="lace-border lace-right"></div>
     </main>
-    <footer class="site-footer">Theology and Computer Programming Collaborative Project - Group 1</footer>
-</div>
-<script src="Scripts/site.js?v=2"></script>
+
+    <main class="book-page">
+        <section class="book-stage" aria-label="Reflection book">
+            <div class="bible-cover" data-book-cover>
+                <span class="cover-mark">e-Faith</span>
+                <h1>Reflections</h1>
+                <p>Group reflection, individual reflections, final prayer, and shared takeaways.</p>
+            </div>
+            <div class="book-reader glass-panel">
+                <div class="flip-book" data-flip-book>
+                    <article class="book-spread book-page-left">
+                        <p class="loading-copy">Opening the book...</p>
+                    </article>
+                    <article class="book-spread book-page-right" data-reflection-content>
+                        <p class="loading-copy">Opening the book...</p>
+                    </article>
+                    <div class="turning-page" data-turning-page aria-hidden="true"></div>
+                </div>
+                <div class="book-controls">
+                    <button class="glass-button" type="button" data-book-prev>Previous</button>
+                    <span data-book-count>1 / 1</span>
+                    <button class="glass-button" type="button" data-book-next>Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="src/js/content.js"></script>
+    <script src="src/js/interactions.js"></script>
+    <script src="src/js/reflections.js"></script>
 </body>
 </html>

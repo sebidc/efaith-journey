@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-Faith Journey | Developers</title>
+    <title>e-Faith Journey | Mood Checker</title>
     <link rel="stylesheet" href="src/css/base.css">
     <link rel="stylesheet" href="src/css/components.css">
     <link rel="stylesheet" href="src/css/pages.css">
 </head>
-<body data-page="developers">
+<body data-page="mood">
     <div class="page-transition" aria-hidden="true"></div>
 
     <main>
@@ -18,10 +18,10 @@
                     <nav class="toc glass-stack" aria-label="Table of contents">
                         <a href="index.html">HOME</a>
                         <a href="reflections.html">REFLECTIONS</a>
-                        <a href="mood-checker.html">MOOD CHECKER</a>
+                        <a href="mood-checker.html" aria-current="page">MOOD CHECKER</a>
                         <a href="key-takeaways.html">KEY TAKEAWAYS</a>
                         <a href="daily-verse.html">DAILY BIBLE VERSE</a>
-                        <a href="developers.html" aria-current="page">DEVELOPERS</a>
+                        <a href="developers.html">DEVELOPERS</a>
                     </nav>
                     <span class="hero-monogram" aria-hidden="true">eF</span>
                     <a class="repo-pill" href="https://github.com/sebidc/efaith-journey" target="_blank" rel="noopener">GITHUB REPO</a>
@@ -29,31 +29,22 @@
                 <div class="hero-scene">
                     <img class="hero-cross" src="assets/images/vineyard-cross.jpg" alt="" aria-hidden="true">
                     <div class="hero-scene-copy">
-                        <p class="kicker">Project Team</p>
-                        <div data-md="content/developers/INTRO.md"></div>
+                        <p class="kicker">Faith Check-In</p>
+                        <h1>Mood Checker</h1>
+                        <p>Choose the feeling closest to your present moment and receive a verse, reflection, and visual response.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="section-grid developers-board">
-            <div class="section-heading">
-                <p class="kicker">Resume Cards</p>
-                <h2>Members</h2>
-            </div>
-            <div class="developer-console">
-                <div class="resume-grid" data-developer-grid></div>
-                <aside class="resume-detail developer-detail" data-resume-dock>
-                    <p class="kicker">Select a Resume</p>
-                    <h2>Developer Details</h2>
-                    <p>Choose a resume thumbnail to reveal the developer profile and role.</p>
-                </aside>
+        <section class="section-grid">
+            <div class="glass-panel wide">
+                <div class="mood-shell" data-mood-app></div>
             </div>
         </section>
     </main>
 
     <script src="src/js/content.js"></script>
     <script src="src/js/interactions.js"></script>
-    <script src="src/js/developers.js"></script>
+    <script src="src/js/mood.js"></script>
 </body>
 </html>

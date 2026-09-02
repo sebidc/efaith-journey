@@ -4,106 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Faith Journey | Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Content/Site.css">
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/components.css">
+    <link rel="stylesheet" href="src/css/pages.css">
 </head>
-<body>
-<div class="app-viewport">
-    <nav class="top-nav" aria-label="Primary navigation">
-        <a class="nav-pill active" href="index.html" aria-current="page">Home</a>
-        <a class="nav-pill" href="reflections.html">Reflections</a>
-        <a class="nav-pill" href="confessions.html">Confessions</a>
-        <a class="nav-pill" href="faith-insights.html">Faith Insights</a>
-        <a class="nav-pill" href="prayer.html">Prayer</a>
-        <a class="nav-pill" href="developers.html">Developers</a>
-    </nav>
+<body data-page="home">
+    <div class="page-transition" aria-hidden="true"></div>
 
-    <main class="main-stage">
-        <div class="lace-border lace-left"></div>
-        <button id="prev-btn" class="book-button" type="button" aria-label="Previous book page"><span aria-hidden="true">&#8249;</span></button>
-
-        <section id="book" class="book" aria-label="Home book">
-            <article class="paper">
-                <div class="front">
-                    <div class="front-content cover-style">
-                        <div class="gold-frame">
-                            <div class="cover-title">The Sacred<br>Truth</div>
-                            <div class="cover-subtitle">Theology and Computer<br>Programming<br>Collaborative Project</div>
-                            <div class="cover-group">Group 1</div>
-                        </div>
+    <main>
+        <section class="hero home-hero" id="top">
+            <div class="hero-card-shell">
+                <div class="hero-chrome">
+                    <nav class="toc glass-stack" aria-label="Table of contents">
+                        <a href="index.html" aria-current="page">HOME</a>
+                        <a href="reflections.html">REFLECTIONS</a>
+                        <a href="mood-checker.html">MOOD CHECKER</a>
+                        <a href="key-takeaways.html">KEY TAKEAWAYS</a>
+                        <a href="daily-verse.html">DAILY BIBLE VERSE</a>
+                        <a href="developers.html">DEVELOPERS</a>
+                    </nav>
+                    <span class="hero-monogram" aria-hidden="true">eF</span>
+                    <a class="repo-pill" href="https://github.com/sebidc/efaith-journey" target="_blank" rel="noopener">GITHUB REPO</a>
+                </div>
+                <div class="hero-scene">
+                    <img class="hero-cross" src="assets/images/vineyard-cross.jpg" alt="" aria-hidden="true">
+                    <div class="hero-scene-copy">
+                        <p class="kicker">Group 1 Theology Performance Task</p>
+                        <div data-md="content/home.md" data-md-select="title"></div>
+                        <div class="hero-copy" data-md="content/home.md" data-md-select="intro"></div>
                     </div>
                 </div>
-                <div class="back">
-                    <div class="back-content parchment-style">
-                        <div class="watermark">Faith</div>
-                        <div class="page-header"><p>Home</p><h2>Introduction</h2></div>
-                        <div class="page-body">
-                            <!-- PUT ORIGINAL INTRODUCTION HERE: replace the copy-slot paragraph. Do not leave AI placeholder text. -->
-                            <p class="copy-slot">Write the group&rsquo;s original Introduction here (your own words). Replace this box.</p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="paper">
-                <div class="front">
-                    <div class="front-content parchment-style">
-                        <div class="watermark">Faith</div>
-                        <div class="page-header"><p>Home</p><h2>Dedication</h2></div>
-                        <div class="page-body">
-                            <!-- PUT ORIGINAL DEDICATION HERE -->
-                            <p class="copy-slot">Write the group&rsquo;s original Dedication here. Replace this box.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="back-content parchment-style">
-                        <div class="watermark">Faith</div>
-                        <div class="page-header"><p>Six sections</p><h2>Journey Map</h2></div>
-                        <div class="page-body">
-                            <ol>
-                                <li><strong>Home</strong> &mdash; introduction and dedication.</li>
-                                <li><strong>Reflections</strong> &mdash; group reflection, then individual reflection.</li>
-                                <li><strong>Confessions</strong> &mdash; group confession, then individual confession.</li>
-                                <li><strong>Faith Insights</strong> &mdash; shared wisdom.</li>
-                                <li><strong>Prayer</strong> &mdash; final group prayer or vow.</li>
-                                <li><strong>Developers</strong> &mdash; member information and resumes.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="paper">
-                <div class="front">
-                    <div class="front-content parchment-style">
-                        <div class="watermark">Faith</div>
-                        <div class="page-header"><p>Closing</p><h2>The End</h2></div>
-                        <div class="page-body centered">
-                            <p><em>May this journey of faith, truth, and learning continue beyond the final page.</em></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="back-content cover-style">
-                        <div class="gold-frame">
-                            <div class="cover-title">e-Faith<br>Journey</div>
-                            <div class="cover-subtitle">The Sacred Truth</div>
-                            <div class="cover-group">Group 1</div>
-                        </div>
-                    </div>
-                </div>
-            </article>
+            </div>
+            <a class="scroll-indicator" href="#mood-preview" aria-label="Scroll to Mood Checker preview">
+                <span>Press to scroll</span>
+                <span class="scroll-dot" aria-hidden="true"></span>
+            </a>
         </section>
 
-        <button id="next-btn" class="book-button" type="button" aria-label="Next book page"><span aria-hidden="true">&#8250;</span></button>
-        <div class="lace-border lace-right"></div>
+        <section class="section-grid" id="mood-preview">
+            <div class="section-heading">
+                <p class="kicker">Interactive Preview</p>
+                <h2>Mood Checker</h2>
+            </div>
+            <div class="glass-panel wide">
+                <div class="mood-shell compact" data-mood-preview></div>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer">Theology and Computer Programming Collaborative Project - Group 1</footer>
-</div>
-<script src="Scripts/site.js?v=2"></script>
+    <script src="src/js/content.js"></script>
+    <script src="src/js/interactions.js"></script>
+    <script src="src/js/mood.js"></script>
 </body>
 </html>

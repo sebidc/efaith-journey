@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - e-Faith Journey</title>
+    <link rel="stylesheet" href="~/css/base.css">
+    <link rel="stylesheet" href="~/css/components.css">
+    <link rel="stylesheet" href="~/css/pages.css">
+</head>
+<body>
+    <nav class="toc glass-stack" aria-label="Table of contents">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Reflections">Reflections</a>
+        <a asp-controller="Home" asp-action="MoodChecker">Mood Checker</a>
+        <a asp-controller="Home" asp-action="KeyTakeaways">Key Takeaways</a>
+        <a asp-controller="Home" asp-action="DailyVerse">Daily Bible Verse</a>
+        <a asp-controller="Home" asp-action="Developers">Developers</a>
+    </nav>
+    <main>
+        @RenderBody()
+    </main>
+    <script src="~/js/content.js"></script>
+    <script src="~/js/interactions.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

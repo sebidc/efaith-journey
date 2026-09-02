@@ -1,0 +1,23 @@
+{
+    "summaryLabels": ["Primary Takeaway", "Application Plan"],
+    "questions": [
+        {
+            "prompt": "What was your primary takeaway from our theology content?",
+            "options": [
+                "Deepened understanding of theological principles and real-life faith.",
+                "Realized the importance of personal and group reflections in community.",
+                "Learned how active participation and empathy can grow from spiritual beliefs.",
+                "Gained clarity on how personal purpose connects to service."
+            ]
+        },
+        {
+            "prompt": "How do you plan to apply these learnings in daily life?",
+            "options": [
+                "By actively engaging in community outreach, advocacy, or service.",
+                "By practicing mindful reflection and empathy in daily relationships.",
+                "By aligning personal and academic goals with spiritual principles.",
+                "By continuing to seek knowledge and treat others fairly."
+            ]
+        }
+    ]
+}

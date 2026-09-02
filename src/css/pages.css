@@ -1,0 +1,684 @@
+.home-hero {
+    overflow: hidden;
+    border-bottom-left-radius: 34px;
+    border-bottom-right-radius: 34px;
+    padding-top: 34px;
+    background:
+        linear-gradient(180deg, rgba(247, 245, 239, 0.9), rgba(232, 218, 194, 0.68)),
+        url("../../assets/images/dawn-sky.jpg") center / cover;
+}
+
+.shared-header {
+    min-height: 58vh;
+    padding-bottom: 34px;
+}
+
+.hero-card-shell {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-radius: 30px;
+    background: transparent;
+    box-shadow: var(--shadow-soft);
+}
+
+.hero-chrome {
+    position: absolute;
+    top: 16px;
+    left: 18px;
+    right: 18px;
+    z-index: 4;
+    display: flex;
+    gap: clamp(12px, 2vw, 24px);
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.hero-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.hero-monogram {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--display);
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.repo-pill {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+    min-height: 38px;
+    padding: 11px 20px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(17, 17, 15, 0.5), rgba(255, 255, 255, 0.12));
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 10px 28px rgba(17, 17, 15, 0.18);
+    backdrop-filter: blur(18px) saturate(1.35);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35);
+}
+
+.hero-chrome .glass-stack a {
+    min-height: 38px;
+    padding: 12px 13px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
+    box-shadow: none;
+    text-decoration: none;
+    text-shadow: 0 2px 18px rgba(17, 17, 15, 0.46);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.hero-chrome .glass-stack {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.hero-chrome .glass-stack a:hover,
+.hero-chrome .glass-stack a[aria-current="page"] {
+    background: transparent;
+    color: var(--gold);
+}
+
+.hero-scene {
+    position: relative;
+    min-height: min(650px, calc(100vh - 160px));
+    overflow: hidden;
+    border-radius: 22px;
+    background:
+        linear-gradient(180deg, rgba(185, 199, 214, 0.18), rgba(240, 182, 127, 0.16)),
+        url("../../assets/images/dawn-sky.jpg") center / cover;
+}
+
+.shared-header .hero-scene {
+    min-height: 360px;
+}
+
+.hero-cross {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 54%;
+    opacity: 0.64;
+    filter: saturate(0.88) contrast(1.04);
+    pointer-events: none;
+}
+
+.hero-scene::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    height: 36%;
+    background:
+        linear-gradient(10deg, rgba(88, 107, 69, 0.42), transparent 72%),
+        repeating-linear-gradient(105deg, rgba(88, 107, 69, 0.24) 0 6px, rgba(216, 181, 109, 0.08) 6px 10px, transparent 10px 28px);
+    clip-path: polygon(0 56%, 50% 20%, 100% 56%, 100% 100%, 0 100%);
+}
+
+.hero-scene::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.16), transparent 28%),
+        linear-gradient(180deg, rgba(17, 17, 15, 0.04), rgba(17, 17, 15, 0.36));
+}
+
+.hero-scene-copy {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    min-height: inherit;
+    padding: 78px 24px 86px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 4px 28px rgba(17, 17, 15, 0.54);
+}
+
+.hero-scene-copy .markdown {
+    justify-items: center;
+}
+
+.hero-copy {
+    width: min(640px, 100%);
+    margin: 18px auto 0;
+    font-size: clamp(1rem, 2vw, 1.24rem);
+}
+
+.mood-shell {
+    display: grid;
+    gap: 22px;
+}
+
+@media (min-width: 901px) {
+    .mood-shell:not(.compact),
+    .takeaway-form {
+        min-height: 520px;
+    }
+
+    .mood-shell:not(.compact) .mood-options {
+        gap: 18px;
+    }
+
+    .mood-shell:not(.compact) .option-button {
+        min-height: 92px;
+        padding: 22px 24px;
+        font-size: 1.06rem;
+    }
+
+    .takeaway-form {
+        align-content: center;
+    }
+
+    body[data-page="mood"] .section-grid,
+    body[data-page="takeaways"] .section-grid {
+        grid-template-columns: 1fr;
+        width: min(1120px, calc(100vw - 64px));
+    }
+
+    body[data-page="mood"] .section-heading,
+    body[data-page="takeaways"] .section-heading {
+        position: static;
+    }
+}
+
+@media (min-width: 1500px) {
+    .hero-card-shell {
+        width: 100%;
+    }
+}
+
+.mood-question {
+    display: grid;
+    gap: 8px;
+}
+
+.mood-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.option-button {
+    min-height: 58px;
+    padding: 14px 18px;
+    color: var(--ink);
+    text-align: left;
+    border-radius: 18px;
+}
+
+.mood-result {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(247, 245, 239, 0.7);
+}
+
+.emotion-art {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.9), rgba(216, 181, 109, 0.42) 42%, rgba(88, 107, 69, 0.76));
+    color: var(--olive);
+    font-family: var(--display);
+    font-size: 3rem;
+}
+
+.book-page {
+    min-height: 100vh;
+    padding: clamp(72px, 9vw, 120px) 24px;
+}
+
+.book-stage {
+    display: grid;
+    grid-template-columns: minmax(260px, 360px) minmax(0, 880px);
+    gap: clamp(24px, 5vw, 64px);
+    align-items: stretch;
+    width: min(1180px, calc(100vw - 48px));
+    margin: 0 auto;
+}
+
+.bible-cover {
+    min-height: 620px;
+    padding: 34px;
+    border-radius: 18px 26px 26px 18px;
+    background:
+        linear-gradient(90deg, rgba(17, 17, 15, 0.46), transparent 14%),
+        radial-gradient(circle at 30% 18%, #6b4327, #3a2114 54%, #1a0e09);
+    color: var(--sand);
+    box-shadow: var(--shadow-soft), inset 12px 0 28px rgba(0, 0, 0, 0.42);
+    border: 1px solid rgba(216, 181, 109, 0.35);
+    transition: transform 520ms cubic-bezier(0.24, 0.74, 0.24, 1), opacity 520ms ease;
+}
+
+.bible-cover.is-open {
+    transform: rotateY(-10deg) translateX(-8px);
+}
+
+.cover-mark {
+    display: inline-flex;
+    margin-bottom: 26px;
+    color: var(--gold);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 0.76rem;
+}
+
+.bible-cover h1 {
+    font-size: clamp(2.4rem, 4vw, 3.15rem);
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.bible-cover p {
+    margin-top: 24px;
+    color: rgba(232, 218, 194, 0.82);
+}
+
+.book-reader {
+    min-height: 620px;
+    padding: clamp(18px, 3vw, 30px);
+    min-width: 0;
+}
+
+.flip-book {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    perspective: 1600px;
+    min-height: 520px;
+}
+
+.book-spread {
+    min-height: 500px;
+    padding: clamp(20px, 4vw, 42px);
+    border-radius: 16px;
+    background:
+        linear-gradient(90deg, rgba(58, 33, 20, 0.12), transparent 7%, transparent 93%, rgba(58, 33, 20, 0.1)),
+        #fbf5e7;
+    color: #2d2018;
+    box-shadow: inset 0 0 0 1px rgba(90, 58, 34, 0.12);
+    min-width: 0;
+}
+
+.book-page-left {
+    border-radius: 16px 0 0 16px;
+    background:
+        linear-gradient(90deg, rgba(58, 33, 20, 0.16), transparent 12%),
+        #f4e8cf;
+}
+
+.book-page-right {
+    border-radius: 0 16px 16px 0;
+}
+
+.book-page-left::after {
+    content: "Use the arrows below to turn pages.";
+    display: block;
+    margin-top: 20px;
+    color: rgba(45, 32, 24, 0.56);
+    font-size: 0.94rem;
+}
+
+.turning-page {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    border-radius: 0 16px 16px 0;
+    background: #fbf5e7;
+    transform-origin: left center;
+    pointer-events: none;
+    opacity: 0;
+    box-shadow: var(--shadow-tight);
+}
+
+.flip-book.is-turning .turning-page {
+    animation: bookTurn 560ms cubic-bezier(0.24, 0.74, 0.24, 1);
+}
+
+@keyframes bookTurn {
+    0% { opacity: 1; transform: rotateY(0deg); }
+    52% { opacity: 1; }
+    100% { opacity: 0; transform: rotateY(-178deg); }
+}
+
+.book-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.book-controls .glass-button {
+    padding: 10px 16px;
+    color: var(--ink);
+    border-color: rgba(17, 17, 15, 0.16);
+}
+
+.book-spread h1 {
+    font-size: clamp(2rem, 3.8vw, 2.7rem);
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.book-spread.is-swapping {
+    animation: pageSwap 260ms ease;
+}
+
+@keyframes pageSwap {
+    from { opacity: 0; transform: translateX(14px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.resume-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    min-width: 0;
+}
+
+.resume-card {
+    min-height: 230px;
+    padding: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(247, 245, 239, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow-tight);
+    text-align: left;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.resume-card:hover,
+.resume-card[aria-pressed="true"] {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+.resume-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: #fff;
+}
+
+.resume-card span {
+    display: block;
+    padding: 12px 14px;
+    color: var(--ink);
+    font-weight: 800;
+}
+
+.developer-console {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+    gap: 22px;
+    align-items: start;
+}
+
+.member-avatar {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--olive), var(--vine));
+    color: #fff;
+    font-weight: 800;
+}
+
+.developer-detail {
+    position: sticky;
+    top: 90px;
+    background: rgba(17, 17, 15, 0.72);
+}
+
+.developer-detail.is-open {
+    animation: developerSlide 340ms ease;
+}
+
+@keyframes developerSlide {
+    from { opacity: 0; transform: translateX(28px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.developer-detail .markdown {
+    gap: 8px;
+}
+
+.developer-detail h1,
+.developer-detail h2 {
+    font-family: var(--body);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+}
+
+.resume-dock {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    width: min(920px, 100%);
+    max-width: 100%;
+    min-width: 0;
+}
+
+.resume-thumb {
+    border: 0;
+    padding: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    background: var(--pearl);
+}
+
+.resume-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resume-detail {
+    display: grid;
+    align-content: center;
+    gap: 18px;
+    min-height: 360px;
+    padding: clamp(22px, 4vw, 42px);
+    border-radius: 22px;
+    background: rgba(17, 17, 15, 0.62);
+    color: #fff;
+    transform: translateX(18px);
+    opacity: 0;
+    transition: transform 320ms ease, opacity 320ms ease;
+    min-width: 0;
+}
+
+.resume-detail h1,
+.resume-detail h2 {
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+}
+
+.resume-detail.is-open {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.resume-link {
+    display: inline-flex;
+    width: fit-content;
+    padding: 11px 18px;
+    border-radius: 999px;
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+}
+
+.takeaway-form {
+    display: grid;
+    gap: 20px;
+}
+
+.question-card {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(247, 245, 239, 0.64);
+}
+
+.choice-label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: start;
+    line-height: 1.45;
+}
+
+.choice-label input {
+    margin-top: 4px;
+    accent-color: var(--vine);
+}
+
+.takeaway-form button {
+    justify-self: start;
+    padding: 12px 20px;
+    color: var(--ink);
+    border-color: rgba(17, 17, 15, 0.18);
+}
+
+.takeaway-result {
+    margin-top: 18px;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(38, 50, 31, 0.84);
+    color: #fff;
+}
+
+.verse-hero {
+    min-height: 100vh;
+    place-items: center;
+    background:
+        linear-gradient(180deg, rgba(17, 17, 15, 0.12), rgba(17, 17, 15, 0.52)),
+        url("../../assets/images/dawn-sky.jpg") center / cover;
+}
+
+.verse-card {
+    width: min(780px, calc(100vw - 48px));
+    padding: clamp(28px, 6vw, 64px);
+    color: #fff;
+    background: linear-gradient(145deg, rgba(17, 17, 15, 0.64), rgba(17, 17, 15, 0.28));
+}
+
+.verse-card h1 {
+    font-size: clamp(2rem, 5vw, 4.2rem);
+}
+
+.verse-card p {
+    margin-top: 18px;
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+}
+
+.verse-meta {
+    color: var(--sand);
+}
+
+@media (max-width: 900px) {
+    .mood-options,
+    .book-stage,
+    .resume-dock,
+    .developer-console,
+    .flip-book {
+        grid-template-columns: 1fr;
+    }
+
+    .bible-cover,
+    .book-reader {
+        min-height: auto;
+    }
+
+    .resume-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .book-page-left {
+        display: none;
+    }
+
+    .book-page-right {
+        border-radius: 16px;
+    }
+
+    .turning-page {
+        left: 0;
+        width: 100%;
+    }
+
+    .developer-detail {
+        position: static;
+    }
+}
+
+@media (max-width: 1100px) {
+    .resume-dock {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .home-hero {
+        min-height: 94vh;
+    }
+
+    .resume-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mood-result {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-detail {
+        transform: translateY(12px);
+    }
+
+    .resume-detail.is-open {
+        transform: translateY(0);
+    }
+}

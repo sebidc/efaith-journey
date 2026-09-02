@@ -1,0 +1,93 @@
+[
+    {
+        "label": "Abasolo",
+        "slug": "ABASOLO",
+        "bio": "content/developers/ABASOLO.md",
+        "resumePreview": "assets/resumes/previews/ABASOLO.jpg",
+        "resumePdf": "assets/resumes/ABASOLO.pdf"
+    },
+    {
+        "label": "Bayan",
+        "slug": "BAYAN",
+        "bio": "content/developers/BAYAN.md",
+        "resumePreview": "assets/resumes/previews/BAYAN.jpg",
+        "resumePdf": "assets/resumes/BAYAN.pdf"
+    },
+    {
+        "label": "Crisostomo",
+        "slug": "CRISOSTOMO",
+        "bio": "content/developers/CRISOSTOMO.md",
+        "resumePreview": "assets/resumes/previews/CRISOSTOMO.jpg",
+        "resumePdf": "assets/resumes/CRISOSTOMO.pdf"
+    },
+    {
+        "label": "Dela Cruz",
+        "slug": "DELA-CRUZ",
+        "bio": "content/developers/DELA-CRUZ.md",
+        "resumePreview": "assets/resumes/previews/DELA-CRUZ.jpg",
+        "resumePdf": "assets/resumes/DELA-CRUZ.pdf"
+    },
+    {
+        "label": "Hernandez",
+        "slug": "HERNANDEZ",
+        "bio": "content/developers/HERNANDEZ.md",
+        "resumePreview": "assets/resumes/previews/HERNANDEZ.jpg",
+        "resumePdf": "assets/resumes/HERNANDEZ.pdf"
+    },
+    {
+        "label": "Lucas",
+        "slug": "LUCAS",
+        "bio": "content/developers/LUCAS.md",
+        "resumePreview": "assets/resumes/previews/LUCAS.jpg",
+        "resumePdf": "assets/resumes/LUCAS.pdf"
+    },
+    {
+        "label": "Manuel",
+        "slug": "MANUEL",
+        "bio": "content/developers/MANUEL.md",
+        "resumePreview": "assets/resumes/previews/MANUEL.jpg",
+        "resumePdf": "assets/resumes/MANUEL.pdf"
+    },
+    {
+        "label": "Panganiban",
+        "slug": "PANGANIBAN",
+        "bio": "content/developers/PANGANIBAN.md",
+        "resumePreview": "assets/resumes/previews/PANGANIBAN.jpg",
+        "resumePdf": "assets/resumes/PANGANIBAN.pdf"
+    },
+    {
+        "label": "Quiambao",
+        "slug": "QUIAMBAO",
+        "bio": "content/developers/QUIAMBAO.md",
+        "resumePreview": "assets/resumes/previews/QUIAMBAO.jpg",
+        "resumePdf": "assets/resumes/QUIAMBAO.pdf"
+    },
+    {
+        "label": "Ramos",
+        "slug": "RAMOS",
+        "bio": "content/developers/RAMOS.md",
+        "resumePreview": "assets/resumes/previews/RAMOS.jpg",
+        "resumePdf": "assets/resumes/RAMOS.pdf"
+    },
+    {
+        "label": "Roque",
+        "slug": "ROQUE",
+        "bio": "content/developers/ROQUE.md",
+        "resumePreview": "assets/resumes/previews/ROQUE.jpg",
+        "resumePdf": "assets/resumes/ROQUE.pdf"
+    },
+    {
+        "label": "Tapiceria",
+        "slug": "TAPICERIA",
+        "bio": "content/developers/TAPICERIA.md",
+        "resumePreview": "assets/resumes/previews/TAPICERIA.jpg",
+        "resumePdf": "assets/resumes/TAPICERIA.pdf"
+    },
+    {
+        "label": "Villena",
+        "slug": "VILLENA",
+        "bio": "content/developers/VILLENA.md",
+        "resumePreview": "assets/resumes/previews/VILLENA.jpg",
+        "resumePdf": "assets/resumes/VILLENA.pdf"
+    }
+]

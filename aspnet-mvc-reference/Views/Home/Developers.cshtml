@@ -1,0 +1,9 @@
+@model EFaithJourney.Models.SitePage
+@{
+    ViewData["Title"] = Model.Title;
+}
+<section class="page-hero">
+    <p class="kicker">MVC Reference</p>
+    <h1>@Model.Title</h1>
+    <p>Content source: @Model.ContentPath</p>
+</section>

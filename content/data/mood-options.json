@@ -1,0 +1,50 @@
+[
+    {
+        "mood": "Anxiety and Stress",
+        "symbol": "A",
+        "description": "I feel overwhelmed by deadlines, exams, or expectations.",
+        "reference": "Philippians 4:6-7",
+        "verse": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+        "explanation": "The pressure does not need to be carried alone. Prayer gives your mind a place to breathe and remember that peace can meet you inside responsibility."
+    },
+    {
+        "mood": "Fear and Uncertainty",
+        "symbol": "F",
+        "description": "I am worried about failure or the next step.",
+        "reference": "Isaiah 41:10",
+        "verse": "So do not fear, for I am with you; do not be dismayed, for I am your God.",
+        "explanation": "Uncertainty feels smaller when you remember you are accompanied. Courage begins with taking the next faithful step."
+    },
+    {
+        "mood": "Tiredness",
+        "symbol": "R",
+        "description": "I feel tired and need rest.",
+        "reference": "Matthew 11:28",
+        "verse": "Come to me, all you who are weary and burdened, and I will give you rest.",
+        "explanation": "Rest is not weakness. It is part of being human, and it allows the heart to return to God with honesty."
+    },
+    {
+        "mood": "Gratitude",
+        "symbol": "G",
+        "description": "I feel thankful and want to keep that spirit.",
+        "reference": "1 Thessalonians 5:18",
+        "verse": "Give thanks in all circumstances; for this is God's will for you in Christ Jesus.",
+        "explanation": "Gratitude trains the soul to notice grace. Let the good things you see today become a quiet prayer."
+    },
+    {
+        "mood": "Loneliness",
+        "symbol": "L",
+        "description": "I feel alone or unseen.",
+        "reference": "Psalm 34:18",
+        "verse": "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+        "explanation": "Feeling unseen does not mean you are forgotten. Your life is still held with nearness, care, and meaning."
+    },
+    {
+        "mood": "Hope",
+        "symbol": "H",
+        "description": "I feel hopeful and ready to continue.",
+        "reference": "Jeremiah 29:11",
+        "verse": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you.",
+        "explanation": "Hope gives effort a horizon. Keep moving with patience, because growth often happens quietly before it becomes visible."
+    }
+]

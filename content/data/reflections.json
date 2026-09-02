@@ -1,0 +1,17 @@
+[
+    { "label": "Group", "file": "content/reflections/GROUP.md" },
+    { "label": "Abasolo", "file": "content/reflections/ABASOLO.md" },
+    { "label": "Bayan", "file": "content/reflections/BAYAN.md" },
+    { "label": "Crisostomo", "file": "content/reflections/CRISOSTOMO.md" },
+    { "label": "Dela Cruz", "file": "content/reflections/DELA-CRUZ.md" },
+    { "label": "Hernandez", "file": "content/reflections/HERNANDEZ.md" },
+    { "label": "Lucas", "file": "content/reflections/LUCAS.md" },
+    { "label": "Manuel", "file": "content/reflections/MANUEL.md" },
+    { "label": "Panganiban", "file": "content/reflections/PANGANIBAN.md" },
+    { "label": "Quiambao", "file": "content/reflections/QUIAMBAO.md" },
+    { "label": "Ramos", "file": "content/reflections/RAMOS.md" },
+    { "label": "Roque", "file": "content/reflections/ROQUE.md" },
+    { "label": "Tapiceria", "file": "content/reflections/TAPICERIA.md" },
+    { "label": "Villena", "file": "content/reflections/VILLENA.md" },
+    { "label": "Final Prayer", "file": "content/reflections/FINAL_PRAYER.md" }
+]
