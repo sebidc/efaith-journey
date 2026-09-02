@@ -166,34 +166,41 @@
     .toc {
         position: static;
         inset: auto;
-        width: auto;
+        width: 100%;
         overflow: hidden;
         transform: none;
     }
 
     .glass-stack {
         flex-direction: row;
-        flex-wrap: wrap;
-        overflow: hidden;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
         max-width: 100%;
         padding: 8px;
         border-radius: 22px;
         background: rgba(17, 17, 15, 0.36);
         backdrop-filter: blur(22px);
         -webkit-backdrop-filter: blur(22px);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .glass-stack::-webkit-scrollbar {
+        display: none;
     }
 
     .glass-stack a {
-        flex: 1 1 auto;
+        flex: 0 0 auto;
         min-width: fit-content;
         text-align: center;
-        white-space: normal;
+        white-space: nowrap;
     }
 
     .section-grid {
         grid-template-columns: 1fr;
         width: min(720px, calc(100vw - 32px));
-        padding-bottom: 110px;
+        padding: 48px 0 72px;
     }
 
     .page-hero {
