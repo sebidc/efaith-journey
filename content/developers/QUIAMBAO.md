@@ -1,5 +1,9 @@
-# Quiambao
+# Evan Joshua
 
-**Role:** To be added
+**Role:** Theology Researcher
 
-This placeholder bio should describe Quiambao's contribution, skills, and personal message for the project.
+**Age:** 16
+
+**Birthday:** December 28, 2009
+
+**Motto:** “Everything happens for a reason, yet the outcome depends on how you choose to respond.”
