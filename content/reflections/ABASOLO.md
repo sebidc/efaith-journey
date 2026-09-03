@@ -1,5 +1,7 @@
 # Abasolo
 
-This is a placeholder individual reflection for Abasolo. Replace this with the student's final reflection.
+One of the struggles I experience is laziness, especially when it comes to schoolwork and other responsibilities. There are times when I choose to relax, use my phone, or spend time doing things I enjoy instead of immediately doing what I need to accomplish. I often think that I still have plenty of time, but this sometimes leads me to rush my work or not give my best effort. I also notice that when I become too lazy, I lose opportunities to improve myself and develop better habits.
 
-Write about faith, learning, personal growth, and the role of the project in understanding theology through technology.
+Reflecting on the life of St. Augustine helped me understand that a person’s weaknesses do not have to remain permanent. Augustine experienced many struggles and made choices that took him away from the life God wanted for him, but he eventually recognized his mistakes and allowed God to change him. His journey made me realize that I also have the ability to change if I am willing to make an effort. I learned that overcoming a weakness requires discipline, patience, and faith, because God can give me the strength to become better.
+
+Because of this realization, I want to become more disciplined in how I use my time. I will try to finish my responsibilities before anything else, and I will make an effort to participate more actively in class. I also want to make time for prayer and reflection so that I can ask God for guidance whenever I struggle with motivation. Instead of saying that I am simply a lazy person, I want to remind myself that I can develop better habits through consistent effort.
