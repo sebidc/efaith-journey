@@ -1,5 +1,6 @@
 # Crisostomo
 
-**Role:** To be added
-
-This placeholder bio should describe Crisostomo's contribution, skills, and personal message for the project.
+**Role:** Web Designer
+**Age:** 17
+**Birthday:** June 22, 2009
+**Motto:** “If you are scared to fail, it doesn’t mean you’re weak; it means you’re ready to face difficult challenges in life.”
