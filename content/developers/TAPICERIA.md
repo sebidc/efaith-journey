@@ -1,5 +1,9 @@
-# Tapiceria
+# Vincent John
 
-**Role:** To be added
+**Role:** Theology Researcher
 
-This placeholder bio should describe Tapiceria's contribution, skills, and personal message for the project.
+**Age:** 16
+
+**Birthday:** September 25, 2009
+
+**Motto:** "You will never taste the sweetest success if you never experienced the bitterness of sacrifice.”
