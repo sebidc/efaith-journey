@@ -46,11 +46,11 @@
 .glass-stack a {
     min-height: 34px;
     padding: 10px 14px;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(17, 17, 15, 0.38), rgba(255, 255, 255, 0.16));
+    box-shadow: 0 10px 28px rgba(17, 17, 15, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(18px) saturate(1.35);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35);
     text-shadow: 0 2px 18px rgba(17, 17, 15, 0.46);
     white-space: nowrap;
 }
@@ -67,8 +67,8 @@
 
 .glass-stack a:hover,
 .glass-stack a[aria-current="page"] {
-    background: transparent;
-    color: var(--gold);
+    background: linear-gradient(135deg, rgba(216, 181, 109, 0.46), rgba(255, 255, 255, 0.18));
+    color: #fff;
 }
 
 .glass-panel {
@@ -173,28 +173,20 @@
 
     .glass-stack {
         flex-direction: row;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        overflow-y: hidden;
+        flex-wrap: wrap;
+        overflow: visible;
         max-width: 100%;
         padding: 8px;
         border-radius: 22px;
         background: rgba(17, 17, 15, 0.36);
         backdrop-filter: blur(22px);
         -webkit-backdrop-filter: blur(22px);
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-
-    .glass-stack::-webkit-scrollbar {
-        display: none;
     }
 
     .glass-stack a {
-        flex: 0 0 auto;
-        min-width: fit-content;
+        flex: 1 1 calc(33.333% - 8px);
         text-align: center;
-        white-space: nowrap;
+        white-space: normal;
     }
 
     .section-grid {

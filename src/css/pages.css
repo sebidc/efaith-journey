@@ -5,15 +5,13 @@
     overflow: hidden;
     border-bottom-left-radius: 34px;
     border-bottom-right-radius: 34px;
-    padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 24px) 28px;
-    background:
-        linear-gradient(180deg, rgba(247, 245, 239, 0.64), rgba(232, 218, 194, 0.12) 68%, rgba(247, 245, 239, 0)),
-        url("../../assets/images/dawn-sky.jpg") center / cover;
+    padding: clamp(12px, 1.4vw, 20px) clamp(14px, 1.8vw, 24px) 0;
+    background: url("../../assets/images/dawn-sky.jpg") center / cover;
 }
 
 .shared-header {
     min-height: auto;
-    padding-bottom: 26px;
+    padding-bottom: 0;
 }
 
 .hero-card-shell {
@@ -120,8 +118,8 @@
     background:
         linear-gradient(180deg, rgba(185, 199, 214, 0.18), rgba(240, 182, 127, 0.16)),
         url("../../assets/images/dawn-sky.jpg") center / cover;
-    mask-image: linear-gradient(180deg, #000 0%, #000 84%, rgba(0, 0, 0, 0.82) 92%, transparent 100%);
-    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 84%, rgba(0, 0, 0, 0.82) 92%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 72%, rgba(0, 0, 0, 0.82) 82%, rgba(0, 0, 0, 0.44) 91%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 72%, rgba(0, 0, 0, 0.82) 82%, rgba(0, 0, 0, 0.44) 91%, transparent 100%);
 }
 
 .shared-header .hero-scene {
@@ -161,7 +159,7 @@
     inset: 0;
     background:
         radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.16), transparent 28%),
-        linear-gradient(180deg, rgba(17, 17, 15, 0.04), rgba(17, 17, 15, 0.18) 62%, rgba(247, 245, 239, 0.76) 100%);
+        linear-gradient(180deg, rgba(17, 17, 15, 0.04), rgba(17, 17, 15, 0.1) 62%, rgba(247, 245, 239, 0.12) 100%);
 }
 
 .hero-scene-copy {
@@ -274,12 +272,31 @@ body[data-page="home"] #mood-preview .section-heading h2,
 .option-button {
     min-height: 58px;
     padding: 14px 18px;
-    color: var(--ink);
+    color: #fff;
     text-align: left;
     border-radius: 18px;
+    background:
+        linear-gradient(135deg, rgba(17, 17, 15, 0.48), rgba(255, 255, 255, 0.16)),
+        rgba(17, 17, 15, 0.2);
+    box-shadow: 0 12px 30px rgba(17, 17, 15, 0.13), inset 0 1px 0 rgba(255, 255, 255, 0.26);
+    text-shadow: 0 2px 18px rgba(17, 17, 15, 0.36);
     text-transform: none;
     letter-spacing: 0;
     line-height: 1.35;
+    transform-origin: center;
+    will-change: transform, filter;
+}
+
+.option-button[aria-pressed="true"] {
+    color: var(--ink);
+    background:
+        linear-gradient(135deg, rgba(216, 181, 109, 0.54), rgba(255, 255, 255, 0.36)),
+        rgba(255, 255, 255, 0.24);
+    text-shadow: none;
+}
+
+.option-button.is-popping {
+    animation: glassPressPop 520ms cubic-bezier(0.18, 0.9, 0.2, 1);
 }
 
 .mood-result {
@@ -290,6 +307,37 @@ body[data-page="home"] #mood-preview .section-heading h2,
     padding: 20px;
     border-radius: 20px;
     background: rgba(247, 245, 239, 0.7);
+    transform-origin: top center;
+}
+
+.mood-result.is-revealing,
+.takeaway-result.is-revealing {
+    animation: glassReveal 640ms cubic-bezier(0.16, 0.9, 0.2, 1) both;
+}
+
+@keyframes glassPressPop {
+    0% { transform: scale(1); filter: blur(0); }
+    42% { transform: scale(0.975); filter: blur(0.4px); }
+    72% { transform: scale(1.025); filter: blur(0); }
+    100% { transform: scale(1); filter: blur(0); }
+}
+
+@keyframes glassReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.965);
+        filter: blur(10px);
+    }
+    58% {
+        opacity: 1;
+        transform: translateY(2px) scale(1.01);
+        filter: blur(1px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
 }
 
 .emotion-art {
@@ -360,7 +408,7 @@ body[data-page="reflections"] > main:first-of-type {
 }
 
 .book-reader {
-    min-height: 620px;
+    min-height: 760px;
     padding: clamp(20px, 3vw, 34px);
     min-width: 0;
     border-radius: 26px;
@@ -377,88 +425,63 @@ body[data-page="reflections"] > main:first-of-type {
 .flip-book {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    perspective: 1600px;
-    min-height: 520px;
-    padding: 18px;
+    place-items: center;
+    min-height: clamp(420px, 54vw, 680px);
     width: 100%;
-    max-width: 1020px;
-    border-radius: 20px;
-    background:
-        linear-gradient(90deg, rgba(216, 181, 109, 0.22), transparent 48%, rgba(17, 17, 15, 0.18) 50%, transparent 52%, rgba(216, 181, 109, 0.2)),
-        rgba(26, 14, 9, 0.38);
-    box-shadow: inset 0 0 48px rgba(0, 0, 0, 0.22);
-    transition: width 560ms cubic-bezier(0.24, 0.74, 0.24, 1), transform 560ms cubic-bezier(0.24, 0.74, 0.24, 1);
+    overflow: visible;
 }
 
-.book-spread {
-    min-height: 500px;
-    padding: clamp(20px, 4vw, 42px);
-    border-radius: 16px;
-    background:
-        radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.34), transparent 32%),
-        linear-gradient(90deg, rgba(58, 33, 20, 0.12), transparent 7%, transparent 93%, rgba(58, 33, 20, 0.1)),
-        #efe0bf;
-    color: #2d2018;
-    box-shadow: inset 0 0 0 1px rgba(90, 58, 34, 0.16), inset 0 0 28px rgba(90, 58, 34, 0.12);
-    min-width: 0;
+.flip-book.stf__parent {
+    margin-inline: auto;
+    transition: transform 1180ms cubic-bezier(0.16, 0.82, 0.18, 1);
+    will-change: transform;
 }
 
-.book-page-left {
-    border-radius: 16px 0 0 16px;
-    background:
-        linear-gradient(90deg, rgba(58, 33, 20, 0.16), transparent 12%),
-        #e6d2aa;
+.flip-book .stf__block {
+    left: 0 !important;
+    overflow: visible;
 }
 
-.book-page-right {
-    border-radius: 0 16px 16px 0;
+.flip-book.is-front-single.stf__parent {
+    transform: translateX(-25%) translateZ(0);
 }
 
-.book-page-left::after {
-    content: "Use the arrows below to turn pages.";
-    display: block;
-    margin-top: 20px;
-    color: rgba(45, 32, 24, 0.56);
-    font-size: 0.94rem;
+.flip-book.is-back-single.stf__parent {
+    transform: translateX(25%) translateZ(0);
 }
 
-.turning-page {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    border-radius: 0 16px 16px 0;
-    background: #efe0bf;
-    transform-origin: left center;
-    pointer-events: none;
-    opacity: 0;
-    box-shadow: var(--shadow-tight);
-}
-
-.flip-book.is-cover-page {
-    grid-template-columns: 1fr;
-    width: min(560px, calc(100% - 64px));
-}
-
-.flip-book.is-cover-page .book-page-left {
-    display: none;
-}
-
-.flip-book.is-cover-page .book-page-right {
+.reflection-page {
     position: relative;
+    height: 100%;
     overflow: hidden;
-    border-radius: 16px 24px 24px 16px;
-    min-height: 620px;
+    color: #2d2018;
+    background:
+        radial-gradient(circle at 20% 12%, rgba(255, 255, 255, 0.38), transparent 30%),
+        repeating-linear-gradient(88deg, rgba(90, 58, 34, 0.035) 0 1px, transparent 1px 9px),
+        linear-gradient(90deg, rgba(82, 49, 28, 0.12), transparent 12%, transparent 88%, rgba(82, 49, 28, 0.12)),
+        #efe0bf;
+    box-shadow:
+        inset 0 0 0 1px rgba(90, 58, 34, 0.16),
+        inset 0 0 34px rgba(90, 58, 34, 0.12);
+    backface-visibility: hidden;
+}
+
+.reflection-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(255, 255, 255, 0.12), transparent 34%, rgba(77, 45, 24, 0.12));
+    pointer-events: none;
+}
+
+.reflection-cover {
+    color: var(--sand);
     background:
         linear-gradient(90deg, rgba(13, 7, 5, 0.8), rgba(92, 54, 31, 0.32) 9%, transparent 16%),
         radial-gradient(circle at 22% 18%, rgba(150, 92, 52, 0.78), transparent 34%),
         repeating-linear-gradient(88deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 7px),
         repeating-linear-gradient(3deg, rgba(0, 0, 0, 0.11) 0 1px, transparent 1px 9px),
         linear-gradient(135deg, #7a4528 0%, #432416 48%, #1a0e09 100%);
-    color: var(--sand);
     box-shadow:
         inset 22px 0 42px rgba(0, 0, 0, 0.52),
         inset -10px 0 30px rgba(0, 0, 0, 0.34),
@@ -466,17 +489,17 @@ body[data-page="reflections"] > main:first-of-type {
         inset 0 0 0 18px rgba(216, 181, 109, 0.08);
 }
 
-.flip-book.is-cover-page .book-page-right::before {
+.reflection-cover::before {
     content: "";
     position: absolute;
     inset: clamp(22px, 4vw, 44px);
     border: 1px solid rgba(216, 181, 109, 0.3);
-    border-radius: 14px 20px 20px 14px;
+    border-radius: 12px 20px 20px 12px;
     box-shadow: inset 0 0 0 12px rgba(17, 17, 15, 0.12);
     pointer-events: none;
 }
 
-.flip-book.is-cover-page .book-page-right::after {
+.reflection-cover::after {
     content: "";
     position: absolute;
     top: 0;
@@ -488,55 +511,95 @@ body[data-page="reflections"] > main:first-of-type {
     pointer-events: none;
 }
 
-.book-cover-page {
+.reflection-cover-content {
     position: relative;
     z-index: 1;
     display: grid;
     align-content: center;
-    min-height: 420px;
+    justify-items: start;
+    height: 100%;
+    min-height: 0;
+    width: 100%;
+    padding: clamp(32px, 5vw, 60px);
 }
 
-.book-cover-page h1 {
+.reflection-cover-content h1 {
     color: var(--sand);
-    font-size: clamp(2.8rem, 8vw, 6rem);
+    font-size: clamp(2.45rem, 5.4vw, 4.65rem);
+    overflow-wrap: normal;
+    word-break: normal;
     text-shadow: 0 2px 0 rgba(17, 17, 15, 0.28), 0 18px 38px rgba(0, 0, 0, 0.34);
 }
 
-.book-cover-page p:not(.cover-mark) {
-    max-width: 520px;
+.reflection-cover-content p:not(.cover-mark) {
+    max-width: 430px;
     margin-top: 24px;
     color: rgba(232, 218, 194, 0.82);
+    line-height: 1.65;
 }
 
-.book-cover-page.back {
+.reflection-cover-content--end {
     text-align: right;
     justify-items: end;
 }
 
-.flip-book.is-turning-forward .turning-page {
-    animation: bookTurn 560ms cubic-bezier(0.24, 0.74, 0.24, 1);
+.reflection-paper {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: clamp(20px, 3vw, 34px);
+    height: 100%;
+    padding: clamp(26px, 4vw, 48px);
 }
 
-.flip-book.is-turning-back .turning-page {
-    left: 0;
-    border-radius: 16px 0 0 16px;
-    transform-origin: right center;
-    animation: bookTurnBack 560ms cubic-bezier(0.24, 0.74, 0.24, 1);
+.reflection-paper-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    color: rgba(45, 32, 24, 0.62);
+    font-size: 0.86rem;
 }
 
-@keyframes bookTurn {
-    0% { opacity: 1; transform: rotateY(0deg); }
-    52% { opacity: 1; }
-    100% { opacity: 0; transform: rotateY(-178deg); }
+.reflection-paper-body {
+    overflow: auto;
+    padding-right: 6px;
 }
 
-@keyframes bookTurnBack {
-    0% { opacity: 1; transform: rotateY(0deg); }
-    52% { opacity: 1; }
-    100% { opacity: 0; transform: rotateY(178deg); }
+.reflection-paper-body h1 {
+    margin-bottom: 18px;
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    line-height: 0.96;
+}
+
+.reflection-paper-body p {
+    color: rgba(45, 32, 24, 0.86);
+    line-height: 1.72;
+}
+
+.reflection-paper-body p + p {
+    margin-top: 1rem;
+}
+
+.reflection-paper-body--closing {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    min-height: 100%;
+    text-align: center;
+}
+
+.reflection-paper-body--closing h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+.reflection-paper-body--closing p:not(.kicker) {
+    max-width: 430px;
 }
 
 .book-controls {
+    position: relative;
+    z-index: 8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -559,19 +622,9 @@ body[data-page="reflections"] > main:first-of-type {
     text-shadow: 0 2px 14px rgba(17, 17, 15, 0.46);
 }
 
-.book-spread h1 {
-    font-size: clamp(2rem, 3.8vw, 2.7rem);
-    overflow-wrap: normal;
-    word-break: normal;
-}
-
-.book-spread.is-swapping {
-    animation: pageSwap 260ms ease;
-}
-
-@keyframes pageSwap {
-    from { opacity: 0; transform: translateX(14px); }
-    to { opacity: 1; transform: translateX(0); }
+.book-controls .glass-button:disabled {
+    opacity: 0.45;
+    cursor: default;
 }
 
 .resume-grid {
@@ -732,13 +785,25 @@ body[data-page="reflections"] > main:first-of-type {
     background: rgba(247, 245, 239, 0.72);
     border: 1px solid rgba(255, 255, 255, 0.48);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transform-origin: top center;
+}
+
+.question-card.is-answering {
+    animation: questionAnswer 460ms cubic-bezier(0.18, 0.9, 0.2, 1);
 }
 
 .question-card legend {
-    max-width: min(100%, 980px);
-    margin-bottom: 12px;
+    float: left;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 12px;
+    padding: 0;
     line-height: 1.35;
     overflow-wrap: anywhere;
+}
+
+.question-card legend + .choice-label {
+    clear: both;
 }
 
 .choice-label {
@@ -754,6 +819,13 @@ body[data-page="reflections"] > main:first-of-type {
     white-space: normal;
     overflow-wrap: anywhere;
     word-break: normal;
+    transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+.choice-label.is-selected {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(216, 181, 109, 0.34), rgba(255, 255, 255, 0.42));
+    box-shadow: 0 12px 28px rgba(17, 17, 15, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.42);
 }
 
 .choice-label input {
@@ -765,8 +837,9 @@ body[data-page="reflections"] > main:first-of-type {
 .takeaway-form button {
     justify-self: start;
     padding: 12px 20px;
-    color: var(--ink);
-    border-color: rgba(17, 17, 15, 0.18);
+    color: #fff;
+    background: linear-gradient(135deg, rgba(17, 17, 15, 0.48), rgba(255, 255, 255, 0.16));
+    border-color: rgba(255, 255, 255, 0.18);
 }
 
 .takeaway-result {
@@ -775,13 +848,20 @@ body[data-page="reflections"] > main:first-of-type {
     border-radius: 18px;
     background: rgba(38, 50, 31, 0.84);
     color: #fff;
+    transform-origin: top center;
+}
+
+@keyframes questionAnswer {
+    0% { transform: scale(1); }
+    55% { transform: scale(1.006); }
+    100% { transform: scale(1); }
 }
 
 .verse-hero {
     min-height: 100vh;
     place-items: center;
     background:
-        linear-gradient(180deg, rgba(17, 17, 15, 0.12), rgba(17, 17, 15, 0.52)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(247, 245, 239, 0.2)),
         url("../../assets/images/dawn-sky.jpg") center / cover;
 }
 
@@ -806,16 +886,21 @@ body[data-page="reflections"] > main:first-of-type {
 }
 
 @media (max-width: 900px) {
+    body {
+        padding-bottom: 132px;
+    }
+
     .hero-chrome {
         position: fixed;
-        top: 10px;
-        left: 10px;
-        right: 10px;
+        top: auto;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        left: 12px;
+        right: 12px;
         z-index: 1002;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 8px 10px;
-        align-items: center;
+        display: block;
+        width: auto;
+        max-width: min(720px, calc(100vw - 24px));
+        margin: 0 auto;
         pointer-events: auto;
     }
 
@@ -825,28 +910,39 @@ body[data-page="reflections"] > main:first-of-type {
 
     .hero-chrome .glass-stack {
         min-width: 0;
-        padding: 6px;
-        border-radius: 20px;
-        background: rgba(17, 17, 15, 0.42);
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        padding: 7px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 28px;
+        background: linear-gradient(135deg, rgba(17, 17, 15, 0.5), rgba(255, 255, 255, 0.16));
+        box-shadow: 0 18px 48px rgba(17, 17, 15, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(24px) saturate(1.45);
+        -webkit-backdrop-filter: blur(24px) saturate(1.45);
+        overflow: visible;
     }
 
     .hero-chrome .glass-stack a {
+        flex: 1 1 calc(33.333% - 8px);
         min-height: 32px;
-        padding: 8px 10px;
+        padding: 9px 13px;
         font-size: 0.64rem;
+        background: linear-gradient(135deg, rgba(17, 17, 15, 0.42), rgba(255, 255, 255, 0.12));
+        white-space: normal;
+        text-align: center;
     }
 
     .repo-pill {
-        min-height: 32px;
-        padding: 8px 12px;
-        font-size: 0.62rem;
-        white-space: nowrap;
+        display: none;
     }
 
     .home-hero,
     .shared-header {
         min-height: auto;
-        padding: 10px 10px 16px;
+        padding: 10px 10px 0;
     }
 
     .home-hero .scroll-indicator {
@@ -900,25 +996,57 @@ body[data-page="reflections"] > main:first-of-type {
         min-height: auto;
     }
 
+    .book-page {
+        padding: 44px 10px 120px;
+    }
+
+    .book-stage {
+        width: min(100%, calc(100vw - 20px));
+    }
+
+    .book-reader {
+        display: grid;
+        justify-items: center;
+        width: 100%;
+        padding: 18px 10px 22px;
+        overflow: hidden;
+    }
+
+    .flip-book {
+        justify-self: center;
+        width: 100%;
+        max-width: calc(100vw - 56px);
+        min-height: auto;
+    }
+
+    .flip-book.stf__parent,
+    .flip-book.is-front-single.stf__parent,
+    .flip-book.is-back-single.stf__parent {
+        transform: translateX(0) translateZ(0);
+    }
+
+    .reflection-cover-content,
+    .reflection-paper {
+        padding: 28px;
+    }
+
+    .reflection-cover-content h1,
+    .reflection-paper-body h1 {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
     .resume-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .book-page-left {
-        display: none;
-    }
-
-    .book-page-right {
-        border-radius: 16px;
-    }
-
-    .turning-page {
-        left: 0;
-        width: 100%;
-    }
-
     .developer-detail {
         position: static;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-chrome .glass-stack a {
+        flex-basis: calc(50% - 6px);
     }
 }
 
@@ -935,19 +1063,6 @@ body[data-page="reflections"] > main:first-of-type {
 
     .mood-result {
         grid-template-columns: 1fr;
-    }
-
-    .hero-chrome {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .hero-chrome .glass-stack {
-        order: 2;
-    }
-
-    .repo-pill {
-        order: 1;
-        justify-self: end;
     }
 
     .hero-scene-copy {

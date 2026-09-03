@@ -24,7 +24,11 @@
                 root.querySelectorAll(".option-button").forEach((option) => {
                     option.setAttribute("aria-pressed", String(option === button));
                 });
+                button.classList.remove("is-popping");
+                void button.offsetWidth;
+                button.classList.add("is-popping");
                 result.hidden = false;
+                result.classList.remove("is-revealing");
                 result.innerHTML = `
                     <div class="emotion-art" aria-hidden="true">${escapeHtml(item.symbol)}</div>
                     <div>
@@ -34,6 +38,8 @@
                         <p>${escapeHtml(item.explanation)}</p>
                     </div>
                 `;
+                void result.offsetWidth;
+                result.classList.add("is-revealing");
             });
         });
     }

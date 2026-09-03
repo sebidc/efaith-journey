@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Faith Journey | Reflections</title>
-    <link rel="stylesheet" href="src/css/base.css?v=20260903f">
-    <link rel="stylesheet" href="src/css/components.css?v=20260903f">
-    <link rel="stylesheet" href="src/css/pages.css?v=20260903f">
+    <link rel="stylesheet" href="src/css/base.css?v=20260903ac">
+    <link rel="stylesheet" href="src/css/components.css?v=20260903ac">
+    <link rel="stylesheet" href="src/css/pages.css?v=20260903ac">
 </head>
 <body data-page="reflections">
     <div class="page-transition" aria-hidden="true"></div>
@@ -22,9 +22,10 @@
                         <a href="key-takeaways.html">KEY TAKEAWAYS</a>
                         <a href="daily-verse.html">DAILY BIBLE VERSE</a>
                         <a href="developers.html">DEVELOPERS</a>
+                        <a href="https://github.com/sebidc/efaith-journey" target="_blank" rel="noopener">GITHUB REPO</a>
+
                     </nav>
                     <span class="hero-monogram" aria-hidden="true">eF</span>
-                    <a class="repo-pill" href="https://github.com/sebidc/efaith-journey" target="_blank" rel="noopener">GITHUB REPO</a>
                 </div>
                 <div class="hero-scene">
                     <img class="hero-cross" src="assets/images/vineyard-cross.jpg" alt="" aria-hidden="true">
@@ -42,13 +43,7 @@
         <section class="book-stage" aria-label="Reflection book">
             <div class="book-reader glass-panel">
                 <div class="flip-book" data-flip-book>
-                    <article class="book-spread book-page-left">
-                        <p class="loading-copy">Opening the book...</p>
-                    </article>
-                    <article class="book-spread book-page-right" data-reflection-content>
-                        <p class="loading-copy">Opening the book...</p>
-                    </article>
-                    <div class="turning-page" data-turning-page aria-hidden="true"></div>
+                    <p class="loading-copy" data-book-loading>Opening the book...</p>
                 </div>
                 <div class="book-controls">
                     <button class="glass-button" type="button" data-book-prev>Previous</button>
@@ -59,8 +54,9 @@
         </section>
     </main>
 
-    <script src="src/js/content.js?v=20260903f"></script>
-    <script src="src/js/interactions.js?v=20260903f"></script>
-    <script src="src/js/reflections.js?v=20260903f"></script>
+    <script src="src/vendor/page-flip/page-flip.browser.min.js?v=20260903ac"></script>
+    <script src="src/js/content.js?v=20260903ac"></script>
+    <script src="src/js/interactions.js?v=20260903ac"></script>
+    <script src="src/js/reflections.js?v=20260903ac"></script>
 </body>
 </html>

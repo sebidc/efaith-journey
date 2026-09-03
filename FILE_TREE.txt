@@ -118,3 +118,6 @@ src/js/interactions.js
 src/js/mood.js
 src/js/reflections.js
 src/js/takeaways.js
+src/vendor
+src/vendor/page-flip
+src/vendor/page-flip/page-flip.browser.min.js
