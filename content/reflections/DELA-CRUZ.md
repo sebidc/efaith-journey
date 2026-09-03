@@ -1,5 +1,7 @@
 # Dela Cruz
 
-This is a placeholder individual reflection for Dela Cruz. Replace this with the student's final reflection.
+Being part of school organizations has given me experiences that I could never learn from textbooks alone. I have participated in clubs, helped with different activities, and taken on responsibilities in student governance. These opportunities taught me how to communicate with others, make decisions, handle responsibilities, and contribute to something beyond myself. At the same time, being involved in so many things came with a challenge I did not expect—my academic performance was not always where I wanted it to be.
 
-Write about faith, learning, personal growth, and the role of the project in understanding theology through technology.
+Sometimes, seeing my grades made me wonder if I was doing too much or if I was simply not good enough to manage everything. It was difficult watching other students perform better academically while I was spending much of my time fulfilling responsibilities outside the classroom. Eventually, I understood that these struggles were also teaching me something. Leadership does not require me to be perfect in everything. I can have weaknesses, make mistakes, and still become better through them. What matters is that I recognize where I am falling short, learn how to manage my priorities, and continue working toward improvement.
+
+This realization also strengthened my relationship with God. **2 Timothy 1:7** reminds me that fear is not what God wants to rule my decisions; instead, He calls me to live with courage, love, and self-discipline. Whenever I become overwhelmed by academics or the responsibilities I carry in organizations and student governance, I try to remember that my worth is not determined by a single grade or achievement. With faith guiding me, I want to keep serving others, improving as a student, and becoming a leader who is willing to learn from both successes and failures.
