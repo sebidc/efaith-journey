@@ -1,5 +1,9 @@
-# Panganiban
+# Steven Karl
 
-**Role:** To be added
+**Role:** Theology Researcher
 
-This placeholder bio should describe Panganiban's contribution, skills, and personal message for the project.
+**Age:** 17
+
+**Birthday:** June 5, 2009
+
+**Motto:** "Choose growth over comfort."
