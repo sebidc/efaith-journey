@@ -1,5 +1,6 @@
 # Lucas
 
-**Role:** To be added
-
-This placeholder bio should describe Lucas's contribution, skills, and personal message for the project.
+**Role:** Theology Researcher
+**Age:** 17
+**Birthday:** November 11, 2008
+**Motto:** “With God’s guidance, I can overcome my struggles and become better each day.”
