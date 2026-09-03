@@ -1,5 +1,9 @@
-# Bayan
+# Irish Mae
 
-**Role:** To be added
+**Role:** Web Designer
 
-This placeholder bio should describe Bayan's contribution, skills, and personal message for the project.
+**Age:** 17
+
+**Birthday:** January 7, 2009
+
+**Motto:** “To bring about change, you must not be afraid to take the first step."
