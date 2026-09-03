@@ -1,5 +1,6 @@
-# Abasolo
+# Yancy Shawn
 
-**Role:** To be added
-
-This placeholder bio should describe Abasolo's contribution, skills, and personal message for the project.
+**Role:** Theology Researcher
+**Age:** 17
+**Birthday:** February 25, 2009
+**Motto:** “Do what must be done, even when I don’t feel like it.”
