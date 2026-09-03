@@ -12,14 +12,47 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        if (document.querySelector(".site-frame")) {
-            return;
+        const chrome = document.querySelector(".hero-chrome");
+        const menuButton = document.querySelector(".menu-toggle");
+        const menu = document.querySelector("[data-site-menu]");
+
+        if (chrome && menuButton && menu) {
+            const closeMenu = () => {
+                chrome.classList.remove("is-menu-open");
+                menuButton.setAttribute("aria-expanded", "false");
+            };
+
+            menuButton.addEventListener("click", (event) => {
+                event.stopPropagation();
+                const isOpen = chrome.classList.toggle("is-menu-open");
+                menuButton.setAttribute("aria-expanded", String(isOpen));
+            });
+
+            menu.addEventListener("click", (event) => {
+                if (event.target.closest("a")) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener("click", (event) => {
+                if (!chrome.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            });
         }
 
-        const frame = document.createElement("div");
-        frame.className = "site-frame";
-        frame.setAttribute("aria-hidden", "true");
-        document.body.append(frame);
+        if (!document.querySelector(".site-frame")) {
+            const frame = document.createElement("div");
+            frame.className = "site-frame";
+            frame.setAttribute("aria-hidden", "true");
+            document.body.append(frame);
+        }
     });
 
     document.addEventListener("click", (event) => {

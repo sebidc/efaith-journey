@@ -21,7 +21,6 @@
                 detail.innerHTML = `
                     <p class="kicker">${escapeHtml(member.label)}</p>
                     ${markdownToHtml(markdown)}
-                    <a class="resume-link" href="${escapeHtml(member.resumePdf)}">Open PDF</a>
                 `;
                 void detail.offsetWidth;
                 detail.classList.add("is-open");
@@ -34,8 +33,13 @@
                 button.setAttribute("aria-pressed", "false");
                 button.innerHTML = `
                     <span>${escapeHtml(member.label)}</span>
+                    <span class="resume-preview-fallback" aria-hidden="true">${escapeHtml(member.slug)}</span>
                     <img src="${escapeHtml(member.resumePreview)}" alt="${escapeHtml(member.label)} resume thumbnail">
                 `;
+                button.querySelector("img").addEventListener("error", (event) => {
+                    event.currentTarget.hidden = true;
+                    button.classList.add("has-missing-preview");
+                });
                 button.addEventListener("click", () => openMember(member, button));
                 grid.append(button);
 
