@@ -1,5 +1,9 @@
-# Ramos
+# Rhiangael
 
-**Role:** To be added
+**Role:** Theology Researcher
 
-This placeholder bio should describe Ramos's contribution, skills, and personal message for the project.
+**Age:** 17
+
+**Birthday:** August 17, 2009
+
+**Motto:** "Difficult roads often lead to beautiful destinations."
