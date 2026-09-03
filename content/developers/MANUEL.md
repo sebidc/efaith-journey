@@ -6,4 +6,4 @@
 
 **Birthday:** April 18, 2008
 
-**Motto:** "The hardest choices, requires the strongest wills"
+**Motto:** "The hardest choices, requires the strongest wills."
