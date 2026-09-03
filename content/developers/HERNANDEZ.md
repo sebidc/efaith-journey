@@ -1,5 +1,6 @@
 # Hernandez
 
-**Role:** To be added
-
-This placeholder bio should describe Hernandez's contribution, skills, and personal message for the project.
+**Role:** Project Manager & Back-End Developer
+**Age:** 18
+**Birthday:** March 18, 2008
+**Motto:** “Acting without thinking is reckless, thinking without acting is useless”
