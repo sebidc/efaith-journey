@@ -1,5 +1,9 @@
-# Manuel
+# John Noah
 
-**Role:** To be added
+**Role:** Back-End Developer
 
-This placeholder bio should describe Manuel's contribution, skills, and personal message for the project.
+**Age:** 18
+
+**Birthday:** April 18, 2008
+
+**Motto:** "The hardest choices, requires the strongest wills"
