@@ -1,5 +1,13 @@
 # Ramos
 
-This is a placeholder individual reflection for Ramos. Replace this with the student's final reflection.
+One of the struggles I faced during my junior high school years was the fear of failing not only as a student but also as a daughter. I felt pressured by school, family problems, the expectations of others, and the influence of my friends, classmates, and social media. Because of these challenges, I often overthought everything and questioned whether I was on the right path or whether my decisions were right.
 
-Write about faith, learning, personal growth, and the role of the project in understanding theology through technology.
+When the pain became too heavy, I turned to self-harm as an unhealthy coping mechanism. Some people judged my scars without knowing the struggles behind them. They called them disgusting, but they did not know that those moments were connected to the pain I was trying to survive. My scars remind me of the difficult experiences I have faced, but they also remind me that I am still here. They are part of my story, but they do not define my worth or who I am.
+
+As I learned more about St. Augustine’s Confessions, I reflected more deeply on my own experiences. I admired his honesty in acknowledging his mistakes, weaknesses, confusion, and struggles while searching for God and a meaningful life. His journey helped me understand that feeling lost does not mean I am beyond hope. Like St. Augustine, I am also learning to face my past honestly and recognize the ways I need to grow.
+
+St. Augustine’s story reminded me that faith does not mean I will never feel afraid, confused, or overwhelmed. Instead, faith means continuing to seek God even during difficult moments. My struggles and mistakes can become opportunities for growth, healing, and a deeper relationship with God. I am learning that I should not allow my pain or fear to make every decision for me. I can ask for help, choose healthier ways to cope, and trust that God can guide me through uncertainty.
+
+Moving forward, I want to become stronger and more resilient. I will try to embrace each challenge as an opportunity for growth while keeping my core values close to my heart. I will continue learning, praying, and being patient with myself. I also hope to become more compassionate toward others who may be struggling silently, because I know that people often carry pain that others cannot see.
+
+This is the ending of my confession. I may not have everything figured out, but I am still here, still trying, and still growing. My past is part of me, but it does not control my future. With God’s guidance, I will continue choosing healing, hope, and courage one day at a time. As Isaiah 41:10 says, “Do not fear, for I am with you.” Even when life feels overwhelming, I believe God will strengthen me, guide me, and remind me that my life has value.
