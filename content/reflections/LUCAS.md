@@ -1,5 +1,7 @@
 # Lucas
 
-This is a placeholder individual reflection for Lucas. Replace this with the student's final reflection.
+One of the struggles I have experienced is losing my motivation and doubting myself. There were moments when I would rather rest or do something else than start my schoolwork or responsibilities. I also sometimes questioned whether I was capable of doing things correctly, which made me hesitate to try. Because of this, I would often delay my tasks and realize later that I should have started earlier. These experiences made me realize that I need to become more responsible and learn how to believe in myself.
 
-Write about faith, learning, personal growth, and the role of the project in understanding theology through technology.
+When I learned about St. Augustine’s life, I saw that change does not happen instantly. He experienced many struggles and made decisions that were not always right, but he eventually found his way back to God. His story reminded me that having weaknesses does not make someone a bad person. What matters is recognizing our mistakes and choosing to improve. I realized that I can also overcome my own struggles by putting in effort and trusting God instead of giving up whenever things become difficult.
+
+Because of this, I want to work on myself little by little. I will try to manage my time better, start my responsibilities earlier, and stop letting doubt prevent me from trying. I also want to pray more whenever I feel unmotivated or unsure of what to do. St. Augustine taught me that our past mistakes do not have to determine our future. With faith in God and a willingness to improve, I believe I can become more disciplined, confident, and responsible.
