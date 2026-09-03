@@ -1,5 +1,9 @@
 # Manuel
 
-This is a placeholder individual reflection for Manuel. Replace this with the student's final reflection.
+One of the struggles I have faced in my life is doubting my own abilities. Whenever I am given an opportunity, especially something new or challenging, I often focus more on the possibility of failing than succeeding. I overthink what might happen and worry that I am not good enough or that I might disappoint myself and the people around me. Because of these doubts, I have missed a lot of opportunities in my life, and I still sometimes wonder, "What if I had tried?"
 
-Write about faith, learning, personal growth, and the role of the project in understanding theology through technology.
+As I learned more about St. Augustine's Confessions, I began to reflect more deeply on my own struggles. I appreciated St. Augustine's honesty in reflecting on his weaknesses, mistakes, and uncertainties while searching for God and a meaningful life. His journey helped me recognize that my self-doubt has been one of the biggest things holding me back. I realized that having fear and doubt is part of being human, but letting it control my decisions keeps me from discovering what I am capable of.
+
+Most importantly, I learned that my mistakes and missed opportunities do not define my future. Instead of seeing them as failures, I now see them as lessons that can help me grow stronger in faith and as a person. With this realization, I want to become more courageous in taking opportunities, even when I am uncertain of the outcome. 
+
+I also want to strengthen my faith in God by trusting that He will guide me when I am uncertain about myself and my future. I believe God gave me abilities for a reason, and I should trust Him enough to use them. At the same time, I want my growth to have a positive influence on others. Since I know how it feels to doubt myself, I want to be more compassionate toward others who experience the same struggle. Through my actions, I hope to grow in faith and inspire others to trust God and keep moving forward despite their fears.
