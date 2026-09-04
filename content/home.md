@@ -4,6 +4,4 @@
 <!-- intro -->
 ## Walking Faith Through Code
 
-This website is a placeholder introduction for the group's theology and computer programming performance task. Replace this section with the final website introduction, written in the group's own voice.
-
-The finished copy should explain the purpose of the site, the meaning of the faith journey, and how programming was used to present reflection, prayer, and interactive learning.
+Welcome to The Sacred Truth, a digital sanctuary merging Theology and Computer Programming to foster spiritual growth, personal reflection, and biblical encouragement. Your journey begins with our individual and group reflections, where team members share personal adversity and the spiritual lessons discovered along the way. For immediate comfort, our interactive mood checker delivers tailored Scripture verses and explanations based on your current emotional state. Before you leave, the evaluation check-in helps you reflect on your takeaways and consider how to apply these insights to your daily walk. The experience gently closes with a peaceful final prayer and details about the student team whose code and faith brought this project to life.
